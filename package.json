@@ -23,7 +23,6 @@
     "twitter-text": "^2.0.4"
   },
   "devDependencies": {
-    "caniuse-db": "^1.0.30000869",
     "prettier": "^1.12.0"
   },
   "scripts": {
