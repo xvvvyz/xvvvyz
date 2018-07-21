@@ -1,9 +1,9 @@
-import PropTypes from "prop-types";
-import React from "react";
-import List from "./List";
-import ListAudio from "./ListAudio";
-import ListItem from "./ListItem";
-import Section from "./Section";
+import PropTypes from 'prop-types';
+import React from 'react';
+import List from './List';
+import ListAudio from './ListAudio';
+import ListItem from './ListItem';
+import Section from './Section';
 
 const clientId = process.env.GATSBY_SOUNDCLOUD_CLIENT_ID;
 
@@ -17,9 +17,9 @@ const SectionSoundcloud = ({ favorites, favoritesCount }) => (
       {favorites.map(
         ({ node: { artwork_url, stream_url, title, user } }, i) => (
           <ListItem
-            backgroundImg={artwork_url.replace("large", "t500x500")}
-            blur
+            backgroundImg={artwork_url.replace('large', 't500x500')}
             key={i}
+            overlay
           >
             {title} by {user.username}
             <ListAudio streamUrl={`${stream_url}?client_id=${clientId}`} />

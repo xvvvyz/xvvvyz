@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { media } from "../helpers/style-utils";
+import React from 'react';
+import styled from 'styled-components';
+import { media } from '../helpers/style-utils';
 
 const StyledWrapper = styled.li`
   position: relative;
@@ -43,6 +43,18 @@ const StyledBackground = styled.div`
       `;
     }
   }};
+  
+  ${({ blur }) => {
+    if (!blur) return;
+    
+    return `
+      top: -10px;
+      right: -10px;
+      bottom: -10px;
+      left: -10px;
+      filter: blur(5px);
+    `;
+  }};
 `;
 
 const StyledContent = styled.div`
@@ -51,21 +63,23 @@ const StyledContent = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1.5rem;
+  padding: ${({ noPadding }) => noPadding ? '0' : '1.5rem' };
   color: #555;
 
-  background-color: ${props =>
-    props.overlay ? "rgba(238, 247, 255, .9)" : "transparent"};
+  background-color: ${({ overlay }) =>
+    overlay ? 'rgba(238, 247, 255, .7)' : 'transparent'};
 
   ${media.tablet`
-    padding: 2rem;
+    padding: ${({ noPadding }) => noPadding ? '0' : '2rem' };
   `};
 `;
 
-const ListItem = ({ children, backgroundImg, blur }) => (
+const ListItem = ({ children, backgroundImg, blur, overlay, noPadding }) => (
   <StyledWrapper>
-    <StyledBackground backgroundImg={backgroundImg} />
-    <StyledContent overlay={!!backgroundImg && blur}>{children}</StyledContent>
+    <StyledBackground backgroundImg={backgroundImg} blur={blur} />
+    <StyledContent noPadding={noPadding} overlay={overlay}>
+      {children}
+    </StyledContent>
   </StyledWrapper>
 );
 

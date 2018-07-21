@@ -1,9 +1,9 @@
-import PropTypes from "prop-types";
-import React from "react";
-import Helmet from "react-helmet";
-import styled from "styled-components";
-import Header from "../components/Header";
-import "./index.css";
+import PropTypes from 'prop-types';
+import React from 'react';
+import Helmet from 'react-helmet';
+import styled from 'styled-components';
+import Header from '../components/Header';
+import './index.css';
 
 const StyledGodWrapper = styled.div`
   margin: 0 auto;
@@ -18,12 +18,12 @@ const Layout = ({ children, data }) => (
       title={data.site.siteMetadata.title}
       meta={[
         {
-          name: "description",
-          content: "",
+          name: 'description',
+          content: '',
         },
         {
-          name: "keywords",
-          content: "portfolio, personal website",
+          name: 'keywords',
+          content: 'portfolio, personal website',
         },
       ]}
     />

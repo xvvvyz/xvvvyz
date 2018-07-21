@@ -1,8 +1,8 @@
-import React from "react";
-import SectionGithub from "../components/SectionGithub";
-import SectionSoundcloud from "../components/SectionSoundcloud";
-import SectionTwitter from "../components/SectionTwitter";
-import SectionUnsplash from "../components/SectionUnsplash";
+import React from 'react';
+import SectionGithub from '../components/SectionGithub';
+import SectionSoundcloud from '../components/SectionSoundcloud';
+import SectionTwitter from '../components/SectionTwitter';
+import SectionUnsplash from '../components/SectionUnsplash';
 
 const HomePage = ({ data }) => (
   <div>
@@ -58,7 +58,7 @@ export const query = graphql`
         statuses_count
       }
     }
-    allUnsplashPhoto(limit: 4, sort: { fields: [created_at], order: DESC }) {
+    allUnsplashPhoto(limit: 3, sort: { fields: [created_at], order: DESC }) {
       edges {
         node {
           urls {

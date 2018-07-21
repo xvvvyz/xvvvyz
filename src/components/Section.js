@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
-import React from "react";
-import ListHeader from "./ListHeader";
+import PropTypes from 'prop-types';
+import React from 'react';
+import ListHeader from './ListHeader';
 
 const Section = ({ children, linkText, linkUrl, title }) => (
   <section>

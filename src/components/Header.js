@@ -1,8 +1,8 @@
-import Link from "gatsby-link";
-import React from "react";
-import styled from "styled-components";
-import { media } from "../helpers/style-utils";
-import logo from "../images/logo.svg";
+import Link from 'gatsby-link';
+import React from 'react';
+import styled from 'styled-components';
+import { media } from '../helpers/style-utils';
+import logo from '../images/logo.svg';
 
 const StyledHeader = styled.header`
   text-align: center;

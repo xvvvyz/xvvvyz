@@ -1,9 +1,9 @@
-import PropTypes from "prop-types";
-import React from "react";
-import List from "./List";
-import ListItem from "./ListItem";
-import ListLink from "./ListLink";
-import Section from "./Section";
+import PropTypes from 'prop-types';
+import React from 'react';
+import List from './List';
+import ListItem from './ListItem';
+import ListLink from './ListLink';
+import Section from './Section';
 
 const SectionGithub = ({ repos, reposCount }) => (
   <Section

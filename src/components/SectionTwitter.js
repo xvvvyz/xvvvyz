@@ -1,11 +1,11 @@
-import PropTypes from "prop-types";
-import React from "react";
-import ReactHtmlParser from "react-html-parser";
-import twitter from "twitter-text";
-import List from "./List";
-import ListItem from "./ListItem";
-import ListLink from "./ListLink";
-import Section from "./Section";
+import PropTypes from 'prop-types';
+import React from 'react';
+import ReactHtmlParser from 'react-html-parser';
+import twitter from 'twitter-text';
+import List from './List';
+import ListItem from './ListItem';
+import ListLink from './ListLink';
+import Section from './Section';
 
 const SectionTwitter = ({ tweets, tweetsCount }) => (
   <Section
