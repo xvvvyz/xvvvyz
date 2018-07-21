@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "name": "cadejs.com",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
+    "dotenv": "^6.0.0",
+    "gatsby": "^1.9.247",
+    "gatsby-link": "^1.6.40",
+    "gatsby-plugin-google-fonts": "^0.0.4",
+    "gatsby-plugin-react-helmet": "^2.0.10",
+    "gatsby-plugin-styled-components": "^2.0.11",
+    "gatsby-source-github": "^0.0.2",
+    "gatsby-source-soundcloud": "git+ssh://git@github.com:cadejscroggins/gatsby-source-soundcloud.git#latest",
+    "gatsby-source-twitter-timeline": "git+ssh://git@github.com:cadejscroggins/gatsby-source-twitter-timeline.git#latest",
+    "gatsby-source-unsplash": "^1.1.0",
+    "react-helmet": "^5.2.0",
+    "react-html-parser": "^2.0.2",
+    "styled-components": "^3.3.3",
+    "twitter-text": "^2.0.4"
+  },
+  "devDependencies": {
+    "prettier": "^1.12.0"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
