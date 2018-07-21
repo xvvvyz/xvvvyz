@@ -1,4 +1,3 @@
-import Link from 'gatsby-link';
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '../helpers/style-utils';
@@ -24,9 +23,9 @@ const StyledH2 = styled.h2`
 const Header = () => (
   <StyledHeader>
     <StyledH1>
-      <Link to="/">
+      <a href="/">
         <img src={logo} alt="Cade Scroggins" />
-      </Link>
+      </a>
     </StyledH1>
     <StyledH2>As Seen On &ldquo;The Internet&rdquo;</StyledH2>
   </StyledHeader>

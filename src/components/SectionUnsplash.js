@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
+import ImageZoom from 'react-medium-image-zoom';
 import List from './List';
 import ListItem from './ListItem';
 import Section from './Section';
@@ -13,11 +14,6 @@ const StyledImgWrapper = styled.div`
   height: 100%;
 `;
 
-const StyledImg = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-`;
-
 const SectionUnsplash = ({ photos, photosCount }) => (
   <Section
     linkText={`${photosCount} Photos`}
@@ -28,7 +24,18 @@ const SectionUnsplash = ({ photos, photosCount }) => (
       {photos.map((photo, i) => (
         <ListItem key={i} backgroundImg={photo.node.urls.small} blur overlay>
           <StyledImgWrapper>
-            <StyledImg src={photo.node.urls.small} />
+            <ImageZoom
+              image={{
+                src: photo.node.urls.small,
+                style: {
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                }
+              }}
+              zoomImage={{
+                src: photo.node.urls.regular,
+              }}
+            />
           </StyledImgWrapper>
         </ListItem>
       ))}

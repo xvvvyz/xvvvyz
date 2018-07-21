@@ -4,8 +4,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.5.1",
     "dotenv": "^6.0.0",
-    "gatsby": "^1.9.247",
-    "gatsby-link": "^1.6.40",
+    "gatsby": "^1.9.277",
     "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-styled-components": "^2.0.11",
@@ -13,12 +12,17 @@
     "gatsby-source-soundcloud": "git+ssh://git@github.com:cadejscroggins/gatsby-source-soundcloud.git#latest",
     "gatsby-source-twitter-timeline": "git+ssh://git@github.com:cadejscroggins/gatsby-source-twitter-timeline.git#latest",
     "gatsby-source-unsplash": "^1.1.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
     "react-html-parser": "^2.0.2",
+    "react-medium-image-zoom": "^3.0.12",
     "styled-components": "^3.3.3",
     "twitter-text": "^2.0.4"
   },
   "devDependencies": {
+    "caniuse-db": "^1.0.30000869",
     "prettier": "^1.12.0"
   },
   "scripts": {

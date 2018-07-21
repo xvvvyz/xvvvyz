@@ -1,9 +1,6 @@
 require('dotenv').config({ path: '.env' });
 
 module.exports = {
-  siteMetadata: {
-    title: 'Cade Scroggins',
-  },
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',

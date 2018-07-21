@@ -12,14 +12,14 @@ const StyledGodWrapper = styled.div`
   paddingtop: 0;
 `;
 
-const Layout = ({ children, data }) => (
+const Layout = ({ children }) => (
   <StyledGodWrapper>
     <Helmet
-      title={data.site.siteMetadata.title}
+      title="Cade Scroggins"
       meta={[
         {
           name: 'description',
-          content: '',
+          content: 'I&rsquo;m a software developer &amp; designer. Other things as well.',
         },
         {
           name: 'keywords',
@@ -27,7 +27,7 @@ const Layout = ({ children, data }) => (
         },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <Header />
     <main>{children()}</main>
   </StyledGodWrapper>
 );
@@ -37,13 +37,3 @@ Layout.propTypes = {
 };
 
 export default Layout;
-
-export const query = graphql`
-  query SiteDataQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;
