@@ -65,5 +65,12 @@ module.exports = {
         clientID: process.env.GATSBY_SOUNDCLOUD_CLIENT_ID,
       },
     },
+    {
+      resolve: "gatsby-source-reddit",
+      options: {
+        path: 'user/cadejscroggins/submitted',
+        query: { limit: 1000 },
+      },
+    },
   ],
 };

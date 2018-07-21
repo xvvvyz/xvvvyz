@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionGithub from '../components/SectionGithub';
+import SectionReddit from '../components/SectionReddit';
 import SectionSoundcloud from '../components/SectionSoundcloud';
 import SectionTwitter from '../components/SectionTwitter';
 import SectionUnsplash from '../components/SectionUnsplash';
@@ -9,6 +10,10 @@ const HomePage = ({ data }) => (
     <SectionGithub
       repos={data.githubViewer.pinnedRepositories.edges}
       reposCount={data.githubViewer.repositories.totalCount}
+    />
+    <SectionReddit
+      posts={data.allRedditPost.edges}
+      postsCount={data.allRedditPost.totalCount}
     />
     <SectionSoundcloud
       favorites={data.allSoundcloudtrack.edges}
@@ -104,6 +109,23 @@ export const query = graphql`
     }
     soundclouduser {
       public_favorites_count
+    }
+    allRedditPost(limit: 3) {
+      totalCount
+      edges {
+        node {
+          subreddit
+          title
+          permalink
+          preview {
+            images {
+              source {
+                url
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;

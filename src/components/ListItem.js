@@ -67,7 +67,7 @@ const StyledContent = styled.div`
   color: #555;
 
   background-color: ${({ overlay }) =>
-    overlay ? 'rgba(238, 247, 255, .7)' : 'transparent'};
+    overlay ? 'rgba(238, 247, 255, .8)' : 'transparent'};
 
   ${media.tablet`
     padding: ${({ noPadding }) => noPadding ? '0' : '2rem' };
