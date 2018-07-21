@@ -9,10 +9,11 @@ const StyledHeader = styled.header`
 
 const StyledH1 = styled.h1`
   max-width: 20rem;
-  margin: 5rem auto 0;
+  margin: 3.3rem auto 0;
 
   ${media.tablet`
     max-width: 25rem;
+    margin-top: 5.2rem;
   `};
 `;
 
