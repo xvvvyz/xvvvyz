@@ -8,7 +8,7 @@ import Section from './Section';
 const SectionReddit = ({ posts, postsCount }) => (
   <Section
     linkText={`${postsCount} Posts`}
-    linkUrl="https://reddit.com/user/cadejscroggins/posts/"
+    linkUrl="https://reddit.com/u/cadejscroggins"
     title="Reddit"
   >
     <List>
