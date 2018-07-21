@@ -16,8 +16,8 @@ const HomePage = ({ data }) => (
       postsCount={data.allRedditPost.totalCount}
     />
     <SectionSoundcloud
-      favorites={data.allSoundcloudtrack.edges}
-      favoritesCount={data.soundclouduser.public_favorites_count}
+      favorites={data.allSoundcloudFavorite.edges}
+      favoritesCount={data.soundcloudUser.public_favorites_count}
     />
     <SectionTwitter
       tweets={data.allTweet.edges}
@@ -95,7 +95,7 @@ export const query = graphql`
         totalCount
       }
     }
-    allSoundcloudtrack(limit: 2) {
+    allSoundcloudFavorite(limit: 2) {
       edges {
         node {
           title
@@ -107,7 +107,7 @@ export const query = graphql`
         }
       }
     }
-    soundclouduser {
+    soundcloudUser {
       public_favorites_count
     }
     allRedditPost(limit: 3) {

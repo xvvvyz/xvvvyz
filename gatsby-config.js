@@ -19,7 +19,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-twitter-timeline',
+      resolve: 'gatsby-source-twitter',
       options: {
         count: 3,
         credentials: {
@@ -38,7 +38,7 @@ module.exports = {
         queries: [
           `{
             viewer {
-              repositories(last:100) {
+              repositories(last: 100) {
                 totalCount
               }
             }
@@ -61,8 +61,23 @@ module.exports = {
     {
       resolve: 'gatsby-source-soundcloud',
       options: {
-        userID: '3253360',
-        clientID: process.env.GATSBY_SOUNDCLOUD_CLIENT_ID,
+        queries: [
+          {
+            entities: [{ name: 'SoundcloudUser' }],
+            path: 'users/3253360',
+            queryParams: {
+              client_id: process.env.GATSBY_SOUNDCLOUD_CLIENT_ID,
+            },
+          },
+          {
+            entities: [{ name: 'SoundcloudFavorite' }],
+            path: 'users/3253360/favorites',
+            queryParams: {
+              client_id: process.env.GATSBY_SOUNDCLOUD_CLIENT_ID,
+              limit: 1000,
+            },
+          }
+        ],
       },
     },
     {
@@ -70,6 +85,20 @@ module.exports = {
       options: {
         path: 'user/cadejscroggins/submitted',
         query: { limit: 1000 },
+        queries: [
+          {
+            entities: [
+              {
+                idLocation: 'data.id',
+                location: 'data.children',
+                map: 'data',
+                name: 'RedditPost',
+              },
+            ],
+            path: 'user/cadejscroggins/submitted',
+            queryParams: { limit: 1000 },
+          }
+        ],
       },
     },
   ],

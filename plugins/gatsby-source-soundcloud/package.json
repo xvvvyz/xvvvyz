@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "gatsby-source-reddit",
+  "name": "gatsby-source-soundcloud",
   "version": "0.0.1",
   "dependencies": {
     "lodash.get": "^4.4.2",

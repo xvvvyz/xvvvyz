@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "name": "gatsby-source-twitter",
+  "version": "0.0.1",
+  "dependencies": {
+    "graphql": "^0.10.3",
+    "twitter": "^1.7.1"
+  }
+}

@@ -31,7 +31,7 @@ exports.sourceNodes = (gatsby, configOptions) => {
   return Promise.all(queries.map(({ entities, path, queryParams }) => {
     const queryString = qs.stringify(queryParams);
 
-    return fetch(`https://www.reddit.com/${path}.json?${queryString}`)
+    return fetch(`https://api.soundcloud.com/${path}?${queryString}`)
       .then(response => response.json())
       .then(data => {
         for (const entity of entities) {

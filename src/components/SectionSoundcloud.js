@@ -17,7 +17,9 @@ const SectionSoundcloud = ({ favorites, favoritesCount }) => (
       {favorites.map(
         ({ node: { artwork_url, stream_url, title, user } }, i) => (
           <ListItem
-            backgroundImg={artwork_url.replace('large', 't500x500')}
+            backgroundImg={
+              artwork_url ? artwork_url.replace('large', 't500x500') : null
+            }
             key={i}
             overlay
           >

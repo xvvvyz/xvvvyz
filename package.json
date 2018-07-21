@@ -1,6 +1,9 @@
 {
   "private": true,
   "name": "cadejs.com",
+  "workspaces": [
+    "plugins/*"
+  ],
   "dependencies": {
     "babel-plugin-styled-components": "^1.5.1",
     "dotenv": "^6.0.0",
@@ -9,8 +12,6 @@
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-styled-components": "^2.0.11",
     "gatsby-source-github": "^0.0.2",
-    "gatsby-source-soundcloud": "git+ssh://git@github.com:cadejscroggins/gatsby-source-soundcloud.git#latest",
-    "gatsby-source-twitter-timeline": "git+ssh://git@github.com:cadejscroggins/gatsby-source-twitter-timeline.git#latest",
     "gatsby-source-unsplash": "^1.1.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
@@ -27,8 +28,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gatsby develop"
   }
 }
