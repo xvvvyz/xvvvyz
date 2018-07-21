@@ -7,6 +7,7 @@ const StyledWrapper = styled.li`
   width: 100%;
   height: 12rem;
   margin-bottom: 1.5rem;
+  border-radius: .2rem;
   overflow: hidden;
 
   &:last-of-type {
@@ -39,20 +40,20 @@ const StyledBackground = styled.div`
       `;
     } else {
       return `
-        background-color: aliceblue;
+        background-color: #e8ecf1;
       `;
     }
   }};
   
   ${({ blur }) => {
     if (!blur) return;
-    
+
     return `
       top: -10px;
       right: -10px;
       bottom: -10px;
       left: -10px;
-      filter: blur(5px);
+      filter: blur(4px);
     `;
   }};
 `;
@@ -64,10 +65,10 @@ const StyledContent = styled.div`
   bottom: 0;
   left: 0;
   padding: ${({ noPadding }) => noPadding ? '0' : '1.5rem' };
-  color: #555;
+  color: ${({ overlay }) => overlay ? '#fff' : '#6c737e'};
 
   background-color: ${({ overlay }) =>
-    overlay ? 'rgba(238, 247, 255, .8)' : 'transparent'};
+    overlay ? 'rgba(20, 20, 20, .6)' : 'transparent'};
 
   ${media.tablet`
     padding: ${({ noPadding }) => noPadding ? '0' : '2rem' };

@@ -22,15 +22,17 @@ const SectionUnsplash = ({ photos, photosCount }) => (
   >
     <List>
       {photos.map((photo, i) => (
-        <ListItem key={i} backgroundImg={photo.node.urls.small} blur overlay>
+        <ListItem
+          backgroundImg={photo.node.urls.small}
+          blur
+          key={i}
+          noPadding
+        >
           <StyledImgWrapper>
             <ImageZoom
               image={{
                 src: photo.node.urls.small,
-                style: {
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                }
+                style: { maxWidth: '100%', maxHeight: '100%' }
               }}
               zoomImage={{
                 src: photo.node.urls.regular,

@@ -3,18 +3,20 @@ import React from 'react';
 import List from './List';
 import ListItem from './ListItem';
 import ListLink from './ListLink';
+import ListTag from './ListTag';
 import Section from './Section';
 
 const SectionGithub = ({ repos, reposCount }) => (
   <Section
     linkText={`${reposCount} Repositories`}
     linkUrl="https://github.com/cadejscroggins"
-    title="Github"
+    title="GitHub"
   >
     <List>
       {repos.map(({ node: { description, name, url } }, i) => (
         <ListItem key={i}>
-          <div>{description}</div>
+          <ListTag>{name}</ListTag>
+          {description}
           <ListLink href={url}>View Project</ListLink>
         </ListItem>
       ))}

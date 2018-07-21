@@ -11,7 +11,7 @@
 }
 
 html {
-  font-size: 3.5vw;
+  font-size: 3.7vw;
   box-sizing: border-box;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -19,7 +19,7 @@ html {
 
 @media (min-width: 768px) {
   html {
-    font-size: 1.8vw;
+    font-size: 1.7vw;
   }
 }
 
@@ -35,7 +35,7 @@ body {
   font-family: 'PT Mono', monospace;
   font-weight: normal;
   font-kerning: normal;
-  line-height: 1.6em;
+  line-height: 1.8em;
   word-wrap: break-word;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -74,11 +74,9 @@ h5,
 h6 {
   color: inherit;
   text-rendering: optimizeLegibility;
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: normal;
-  line-height: 1.6em;
-  letter-spacing: .02em;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 a {

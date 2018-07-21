@@ -63,7 +63,7 @@ export const query = graphql`
         statuses_count
       }
     }
-    allUnsplashPhoto(limit: 3, sort: { fields: [created_at], order: DESC }) {
+    allUnsplashPhoto(limit: 4, sort: { fields: [created_at], order: DESC }) {
       edges {
         node {
           urls {

@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import List from './List';
-import ListLink from './ListLink';
 import ListItem from './ListItem';
+import ListLink from './ListLink';
+import ListTag from './ListTag';
 import Section from './Section';
 
 const SectionReddit = ({ posts, postsCount }) => (
   <Section
     linkText={`${postsCount} Posts`}
-    linkUrl="https://reddit.com/u/cadejscroggins"
+    linkUrl="https://reddit.com/user/cadejscroggins/posts/"
     title="Reddit"
   >
     <List>
@@ -19,7 +20,8 @@ const SectionReddit = ({ posts, postsCount }) => (
             key={i}
             overlay
           >
-            /r/{subreddit}<br />{title}
+            <ListTag>/r/{subreddit}</ListTag>
+            {title}
             <ListLink href={`https://reddit.com${permalink}`}>
               View Post
             </ListLink>

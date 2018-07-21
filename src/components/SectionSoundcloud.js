@@ -3,6 +3,7 @@ import React from 'react';
 import List from './List';
 import ListAudio from './ListAudio';
 import ListItem from './ListItem';
+import ListTag from './ListTag';
 import Section from './Section';
 
 const clientId = process.env.GATSBY_SOUNDCLOUD_CLIENT_ID;
@@ -11,7 +12,7 @@ const SectionSoundcloud = ({ favorites, favoritesCount }) => (
   <Section
     linkText={`${favoritesCount} Favorites`}
     linkUrl="https://soundcloud.com/cadejscroggins/likes"
-    title="Soundcloud"
+    title="SoundCloud"
   >
     <List>
       {favorites.map(
@@ -23,7 +24,8 @@ const SectionSoundcloud = ({ favorites, favoritesCount }) => (
             key={i}
             overlay
           >
-            {title} by {user.username}
+            <ListTag>{user.username}</ListTag>
+            {title}
             <ListAudio streamUrl={`${stream_url}?client_id=${clientId}`} />
           </ListItem>
         )
