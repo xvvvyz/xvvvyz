@@ -15,7 +15,8 @@ Then, do the following:
 1. clone the repo: `git clone git@github.com:cadejscroggins/cadejs.com.git`
 2. cd into it: `cd cadejs.com`
 3. install dependencies: `yarn`
-4. serve and watch for changes: `yarn develop`
+4. move `.env.template` to `.env` and fill in the blanks
+5. serve and watch for changes: `yarn develop`
 
 ## License
 
