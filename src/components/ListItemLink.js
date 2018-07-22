@@ -3,9 +3,11 @@ import { media } from '../helpers/style-utils';
 
 const ListItemLink = styled.a`
   position: absolute;
-  right: 0;
   bottom: 0;
+  left: 0;
+  width: 100%;
   padding: 1.2rem 1.5rem;
+  text-align: right;
 
   ${media.tablet`
     padding: 1.5rem 2rem;
