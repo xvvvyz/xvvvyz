@@ -19,9 +19,9 @@ const StyledH1 = styled.h1`
 
 const StyledH2 = styled.h2`
   margin-top: 1rem;
-  font-size: .9em;
+  font-size: 0.9em;
   text-transform: uppercase;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
 `;
 
 const Header = () => (

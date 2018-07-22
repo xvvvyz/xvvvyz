@@ -3,12 +3,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledListItemTagWrapper = styled.div`
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 `;
 
 const StyledListItemTag = styled.span`
-  padding: .3rem .5rem;
-  border-radius: .2rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.2rem;
   background-color: #fff;
   color: #222;
 `;
