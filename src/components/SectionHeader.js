@@ -5,7 +5,7 @@ import { media } from '../helpers/style-utils';
 
 const StyledHeader = styled.header`
   margin-top: 4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 
   ${media.tablet`

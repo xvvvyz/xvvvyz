@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   text-align: right;
 `;
 

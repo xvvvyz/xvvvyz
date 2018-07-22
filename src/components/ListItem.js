@@ -9,9 +9,6 @@ const StyledWrapper = styled.li`
   margin-bottom: 1.5rem;
   border-radius: 0.3rem;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(108, 115, 126, 0.12),
-    0 1px 2px rgba(108, 115, 126, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   &:last-of-type {
     margin-bottom: 0;
