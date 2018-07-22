@@ -19,9 +19,6 @@ const StyledH1 = styled.h1`
 
 const StyledH2 = styled.h2`
   margin-top: 1rem;
-  font-size: 0.9em;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 `;
 
 const Header = () => (
@@ -31,7 +28,7 @@ const Header = () => (
         <img src={logo} alt="Cade Scroggins" />
       </a>
     </StyledH1>
-    <StyledH2>As Seen On &ldquo;The Internet&rdquo;</StyledH2>
+    <StyledH2>As seen on &ldquo;The Internet&rdquo;</StyledH2>
   </StyledHeader>
 );
 

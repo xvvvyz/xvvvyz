@@ -40,7 +40,7 @@ const StyledBackground = styled.div`
       `;
     } else {
       return `
-        background-color: #e8ecf1;
+        background-color: #f4f7fc;
       `;
     }
   }};
