@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import ListHeader from './ListHeader';
+import SectionHeader from './SectionHeader';
+import SectionFooter from './SectionFooter';
 
 const Section = ({ children, linkText, linkUrl, title }) => (
   <section>
-    <ListHeader linkText={linkText} linkUrl={linkUrl} title={title} />
+    <SectionHeader title={title} />
     {children}
+    <SectionFooter linkUrl={linkUrl} />
   </section>
 );
 

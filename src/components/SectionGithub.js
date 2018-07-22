@@ -2,22 +2,21 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import List from './List';
 import ListItem from './ListItem';
-import ListLink from './ListLink';
-import ListTag from './ListTag';
+import ListItemLink from './ListItemLink';
+import ListItemTag from './ListItemTag';
 import Section from './Section';
 
 const SectionGithub = ({ repos, reposCount }) => (
   <Section
-    linkText={`${reposCount} Repositories`}
-    linkUrl="https://github.com/cadejscroggins"
-    title="GitHub"
+    linkUrl="https://github.com/cadejscroggins?tab=repositories"
+    title={`${reposCount} Repositories on GitHub`}
   >
     <List>
       {repos.map(({ node: { description, name, url } }, i) => (
         <ListItem key={i}>
-          <ListTag>{name}</ListTag>
+          <ListItemTag>{name}</ListItemTag>
           {description}
-          <ListLink href={url}>View Project</ListLink>
+          <ListItemLink href={url}>View Project</ListItemLink>
         </ListItem>
       ))}
     </List>

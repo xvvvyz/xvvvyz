@@ -5,10 +5,12 @@ import { media } from '../helpers/style-utils';
 const StyledWrapper = styled.li`
   position: relative;
   width: 100%;
-  height: 12rem;
+  height: 13rem;
   margin-bottom: 1.5rem;
-  border-radius: .2rem;
+  border-radius: .3rem;
   overflow: hidden;
+  box-shadow: 0 1px 3px rgba(108, 115, 126, 0.12), 0 1px 2px rgba(108, 115, 126, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 
   &:last-of-type {
     margin-bottom: 0;
@@ -65,10 +67,11 @@ const StyledContent = styled.div`
   bottom: 0;
   left: 0;
   padding: ${({ noPadding }) => noPadding ? '0' : '1.5rem' };
+  font-size: .9em;
   color: ${({ overlay }) => overlay ? '#fff' : '#6c737e'};
 
   background-color: ${({ overlay }) =>
-    overlay ? 'rgba(20, 20, 20, .6)' : 'transparent'};
+    overlay ? 'rgba(108, 115, 126, .8)' : 'transparent'};
 
   ${media.tablet`
     padding: ${({ noPadding }) => noPadding ? '0' : '2rem' };

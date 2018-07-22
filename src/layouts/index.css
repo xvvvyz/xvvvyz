@@ -2,19 +2,8 @@
   box-sizing: inherit;
 }
 
-*:before {
-  box-sizing: inherit;
-}
-
-*:after {
-  box-sizing: inherit;
-}
-
 html {
   font-size: 3.7vw;
-  box-sizing: border-box;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 @media (min-width: 768px) {
@@ -37,10 +26,8 @@ body {
   font-kerning: normal;
   line-height: 1.8em;
   word-wrap: break-word;
-  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
-  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-  font-feature-settings: "kern", "liga", "clig", "calt";
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 }
 
 footer,
@@ -55,14 +42,8 @@ p,
 section,
 ul {
   display: block;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -72,26 +53,18 @@ h3,
 h4,
 h5,
 h6 {
-  color: inherit;
-  text-rendering: optimizeLegibility;
   font-size: inherit;
-  font-weight: inherit;
   line-height: inherit;
 }
 
 a {
   color: inherit;
   background-color: transparent;
-  -webkit-text-decoration-skip: objects;
 }
 
 a:active,
 a:hover {
   outline-width: 0;
-}
-
-svg:not(:root) {
-  overflow: hidden;
 }
 
 img {

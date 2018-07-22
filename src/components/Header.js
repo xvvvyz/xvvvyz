@@ -4,21 +4,22 @@ import { media } from '../helpers/style-utils';
 import logo from '../images/logo.svg';
 
 const StyledHeader = styled.header`
+  margin: 6rem 0;
   text-align: center;
 `;
 
 const StyledH1 = styled.h1`
   max-width: 20rem;
-  margin: 3.3rem auto 0;
+  margin: 0 auto;
 
   ${media.tablet`
     max-width: 25rem;
-    margin-top: 5.2rem;
   `};
 `;
 
 const StyledH2 = styled.h2`
   margin-top: 1rem;
+  font-size: .9em;
   text-transform: uppercase;
   letter-spacing: .05em;
 `;

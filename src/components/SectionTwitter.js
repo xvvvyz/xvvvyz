@@ -4,14 +4,13 @@ import ReactHtmlParser from 'react-html-parser';
 import twitter from 'twitter-text';
 import List from './List';
 import ListItem from './ListItem';
-import ListLink from './ListLink';
+import ListItemLink from './ListItemLink';
 import Section from './Section';
 
 const SectionTwitter = ({ tweets, tweetsCount }) => (
   <Section
-    linkText={`${tweetsCount} Tweets`}
     linkUrl="https://twitter.com/cadejscroggins"
-    title="Twitter"
+    title={`${tweetsCount} Tweets on Twitter`}
   >
     <List>
       {tweets.map((tweet, i) => (
@@ -21,13 +20,13 @@ const SectionTwitter = ({ tweets, tweetsCount }) => (
               urlEntities: tweet.node.entities.urls,
             })
           )}
-          <ListLink
+          <ListItemLink
             href={`https://twitter.com/cadejscroggins/status/${
               tweet.node.id_str
             }`}
           >
             View Tweet
-          </ListLink>
+          </ListItemLink>
         </ListItem>
       ))}
     </List>

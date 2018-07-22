@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledListAudioWrapper = styled.div`
+const StyledListItemAudioWrapper = styled.div`
   position: absolute;
   right: 1.5rem;
   bottom: 1.5rem;
@@ -14,16 +14,16 @@ const StyledAudio = styled.audio`
   margin: 0;
 `;
 
-export default class ListAudio extends React.PureComponent {
+export default class ListItemAudio extends React.PureComponent {
   render() {
     const { streamUrl } = this.props;
 
     return (
-      <StyledListAudioWrapper>
+      <StyledListItemAudioWrapper>
         <StyledAudio controls>
           <source src={streamUrl} type="audio/mp3" />
         </StyledAudio>
-      </StyledListAudioWrapper>
+      </StyledListItemAudioWrapper>
     );
   }
 }

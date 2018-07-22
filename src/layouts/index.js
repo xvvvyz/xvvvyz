@@ -14,19 +14,13 @@ const StyledGodWrapper = styled.div`
 
 const Layout = ({ children }) => (
   <StyledGodWrapper>
-    <Helmet
-      title="Cade Scroggins"
-      meta={[
-        {
-          name: 'description',
-          content: 'I&rsquo;m a software developer &amp; designer. Other things as well.',
-        },
-        {
-          name: 'keywords',
-          content: 'portfolio, personal website',
-        },
-      ]}
-    />
+    <Helmet>
+      <title>Cade Scroggins (@cadejscroggins)</title>
+      <meta name="description" content="I&rsquo;m a software developer &amp; designer. Other things as well. This is an overview of my online existence." />
+      <meta name="keywords" content="cadejscroggins, repositories, posts, photos, favorites" />
+      <link rel="icon" type="image/png" href="/favicon-256.png" sizes="256x256" />
+      <link rel="icon" type="image/png" href="/favicon-1024.png" sizes="1024x1024" />
+    </Helmet>
     <Header />
     <main>{children()}</main>
   </StyledGodWrapper>

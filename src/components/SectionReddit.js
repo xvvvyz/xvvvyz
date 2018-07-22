@@ -2,15 +2,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import List from './List';
 import ListItem from './ListItem';
-import ListLink from './ListLink';
-import ListTag from './ListTag';
+import ListItemLink from './ListItemLink';
+import ListItemTag from './ListItemTag';
 import Section from './Section';
 
 const SectionReddit = ({ posts, postsCount }) => (
   <Section
-    linkText={`${postsCount} Posts`}
     linkUrl="https://reddit.com/user/cadejscroggins/posts/"
-    title="Reddit"
+    title={`${postsCount} Posts on Reddit`}
   >
     <List>
       {posts.map(
@@ -20,11 +19,11 @@ const SectionReddit = ({ posts, postsCount }) => (
             key={i}
             overlay
           >
-            <ListTag>/r/{subreddit}</ListTag>
+            <ListItemTag>/r/{subreddit}</ListItemTag>
             {title}
-            <ListLink href={`https://reddit.com${permalink}`}>
+            <ListItemLink href={`https://reddit.com${permalink}`}>
               View Post
-            </ListLink>
+            </ListItemLink>
           </ListItem>
         )
       )}
