@@ -11,7 +11,7 @@ const clientId = process.env.GATSBY_SOUNDCLOUD_CLIENT_ID;
 const SectionSoundcloud = ({ favorites, favoritesCount }) => (
   <Section
     linkUrl="https://soundcloud.com/cadejscroggins/likes"
-    title={`${favoritesCount} Favorites on SoundCloud`}
+    title={`${favoritesCount} favorites on SoundCloud`}
   >
     <List>
       {favorites.map(

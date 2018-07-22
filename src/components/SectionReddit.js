@@ -9,7 +9,7 @@ import Section from './Section';
 const SectionReddit = ({ posts, postsCount }) => (
   <Section
     linkUrl="https://reddit.com/user/cadejscroggins/posts/"
-    title={`${postsCount} Posts on Reddit`}
+    title={`${postsCount} posts on Reddit`}
   >
     <List>
       {posts.map(({ node: { subreddit, title, permalink, preview } }, i) => (

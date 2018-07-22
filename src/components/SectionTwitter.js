@@ -10,7 +10,7 @@ import Section from './Section';
 const SectionTwitter = ({ tweets, tweetsCount }) => (
   <Section
     linkUrl="https://twitter.com/cadejscroggins"
-    title={`${tweetsCount} Tweets on Twitter`}
+    title={`${tweetsCount} tweets on Twitter`}
   >
     <List>
       {tweets.map((tweet, i) => (

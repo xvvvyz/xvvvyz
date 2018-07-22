@@ -28,7 +28,7 @@ const Header = () => (
         <img src={logo} alt="Cade Scroggins" />
       </a>
     </StyledH1>
-    <StyledH2>As seen on &ldquo;The Internet&rdquo;</StyledH2>
+    <StyledH2>// as seen on &ldquo;the internet&rdquo;</StyledH2>
   </StyledHeader>
 );
 

@@ -9,7 +9,7 @@ import Section from './Section';
 const SectionGithub = ({ repos, reposCount }) => (
   <Section
     linkUrl="https://github.com/cadejscroggins?tab=repositories"
-    title={`${reposCount} Repositories on GitHub`}
+    title={`${reposCount} repositories on GitHub`}
   >
     <List>
       {repos.map(({ node: { description, name, url } }, i) => (

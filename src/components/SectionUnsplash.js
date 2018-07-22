@@ -17,7 +17,7 @@ const StyledImgWrapper = styled.div`
 const SectionUnsplash = ({ photos, photosCount }) => (
   <Section
     linkUrl="https://unsplash.com/@cadejscroggins"
-    title={`${photosCount} Photos on Unsplash`}
+    title={`${photosCount} photos on Unsplash`}
   >
     <List>
       {photos.map((photo, i) => (
