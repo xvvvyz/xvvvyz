@@ -25,10 +25,12 @@ const SectionUnsplash = ({ photos, photosCount }) => (
           <StyledImgWrapper>
             <ImageZoom
               image={{
+                alt: `small unsplash image ${i}`,
                 src: photo.node.urls.small,
                 style: { maxWidth: '100%', maxHeight: '100%' },
               }}
               zoomImage={{
+                alt: `large unsplash image ${i}`,
                 src: photo.node.urls.regular,
               }}
             />

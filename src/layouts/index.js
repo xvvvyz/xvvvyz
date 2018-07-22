@@ -9,12 +9,12 @@ const StyledGodWrapper = styled.div`
   margin: 0 auto;
   max-width: 960px;
   padding: 1.5rem 1.5rem 5rem;
-  paddingtop: 0;
 `;
 
 const Layout = ({ children }) => (
   <StyledGodWrapper>
     <Helmet>
+      <html lang="en" />
       <title>Cade Scroggins (@cadejscroggins)</title>
       <meta
         name="description"
