@@ -8,7 +8,7 @@ import Section from './Section';
 
 const SectionReddit = ({ posts, postsCount }) => (
   <Section
-    linkUrl="https://reddit.com/user/cadejscroggins/posts/"
+    linkUrl="https://www.reddit.com/user/cadejscroggins"
     title={`${postsCount} posts on Reddit`}
   >
     <List>
@@ -16,7 +16,7 @@ const SectionReddit = ({ posts, postsCount }) => (
         <ListItem backgroundImg={preview.images[0].source.url} key={i} overlay>
           <ListItemTag>/r/{subreddit}</ListItemTag>
           {title}
-          <ListItemLink href={`https://reddit.com${permalink}`}>
+          <ListItemLink href={`https://www.reddit.com${permalink}`}>
             View Post
           </ListItemLink>
         </ListItem>
