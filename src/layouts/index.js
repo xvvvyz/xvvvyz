@@ -18,7 +18,7 @@ const Layout = ({ children }) => (
       <title>Cade Scroggins (@cadejscroggins)</title>
       <meta
         name="description"
-        content="I&rsquo;m a software developer &amp; designer. Other things as well. This is an overview of my online existence."
+        content="I&rsquo;m a software developer &amp; designer. Other things as well. As seen on &ldquo;the internet&rdquo;"
       />
       <meta
         name="keywords"
