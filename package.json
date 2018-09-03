@@ -5,7 +5,7 @@
     "plugins/*"
   ],
   "dependencies": {
-    "babel-plugin-styled-components": "^1.5.1",
+    "babel-plugin-styled-components": "^1.6.0",
     "dotenv": "^6.0.0",
     "gatsby": "^1.9.277",
     "gatsby-plugin-canonical-urls": "^1.0.18",
@@ -15,16 +15,16 @@
     "gatsby-source-github": "^0.0.2",
     "gatsby-source-unsplash": "^1.1.0",
     "prop-types": "^15.6.2",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
     "react-html-parser": "^2.0.2",
-    "react-medium-image-zoom": "^3.0.12",
-    "styled-components": "^3.3.3",
+    "react-medium-image-zoom": "^3.0.13",
+    "styled-components": "^3.4.5",
     "twitter-text": "^2.0.4"
   },
   "devDependencies": {
-    "prettier": "^1.12.0"
+    "prettier": "^1.14.2"
   },
   "scripts": {
     "build": "gatsby build",
