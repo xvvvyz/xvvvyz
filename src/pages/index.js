@@ -23,10 +23,10 @@ const HomePage = ({ data }) => (
       tweets={data.allTweet.edges}
       tweetsCount={data.tweet.user.statuses_count}
     />
-    <SectionUnsplash
-      photos={data.allUnsplashPhoto.edges}
-      photosCount={data.unsplashPhoto.user.total_photos}
-    />
+    {/*<SectionUnsplash*/}
+      {/*photos={data.allUnsplashPhoto.edges}*/}
+      {/*photosCount={data.unsplashPhoto.user.total_photos}*/}
+    {/*/>*/}
   </div>
 );
 
