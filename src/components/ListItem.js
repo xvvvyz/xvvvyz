@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { media } from '../helpers/style-utils';
+import { media } from '../utilities/style-utils';
 
 const StyledWrapper = styled.li`
   position: relative;

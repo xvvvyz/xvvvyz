@@ -28,14 +28,14 @@ function generateNode(tweet) {
   return Object.assign({}, tweet, nodeData);
 }
 
-exports.sourceNodes = ({ boundActionCreators }, {
+exports.sourceNodes = ({ actions }, {
   credentials,
   count = 100,
   tweet_mode = 'compat',
   result_type = 'mixed',
   screen_name,
 }) => {
-  const { createNode } = boundActionCreators;
+  const { createNode } = actions;
   const client = new Twitter(credentials);
 
   client.get('statuses/user_timeline', {

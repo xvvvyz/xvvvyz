@@ -21,7 +21,7 @@ module.exports = {
       options: {
         appId: process.env.UNSPLASH_APP_ID,
         collections: ['2357847'],
-        perPage: '1000',
+        perPage: '10',
       },
     },
     {

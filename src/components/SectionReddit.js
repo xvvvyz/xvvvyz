@@ -14,6 +14,7 @@ const SectionReddit = ({ posts, postsCount }) => (
     <List>
       {posts.map(({ node: { subreddit, title, permalink, preview } }, i) => (
         <ListItem backgroundImg={preview.images[0].source.url} key={i} overlay>
+          {console.log(preview)}
           <ListItemTag>/r/{subreddit}</ListItemTag>
           {title}
           <ListItemLink href={`https://www.reddit.com${permalink}`}>

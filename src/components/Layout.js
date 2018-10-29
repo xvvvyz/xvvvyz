@@ -3,12 +3,12 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import Header from '../components/Header';
-import './index.css';
+import '../utilities/reset.css';
 
 const StyledGodWrapper = styled.div`
   margin: 0 auto;
-  max-width: 960px;
-  padding: 1.5rem 1.5rem 5rem;
+  max-width: 1000px;
+  padding: 0 1.5rem 6.5rem;
 `;
 
 const Layout = ({ children }) => (
@@ -38,12 +38,12 @@ const Layout = ({ children }) => (
       />
     </Helmet>
     <Header />
-    <main>{children()}</main>
+    <main>{children}</main>
   </StyledGodWrapper>
 );
 
 Layout.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.object,
 };
 
 export default Layout;

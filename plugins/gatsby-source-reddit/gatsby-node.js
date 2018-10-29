@@ -4,7 +4,7 @@ const get = require('lodash.get');
 const qs = require('query-string');
 
 exports.sourceNodes = (gatsby, configOptions) => {
-  const { boundActionCreators: { createNode }, createNodeId } = gatsby;
+  const { actions: { createNode }, createNodeId } = gatsby;
   const { queries } = configOptions;
 
   const processEntity = ({ entity, entityType, idLocation = 'id' }) => {

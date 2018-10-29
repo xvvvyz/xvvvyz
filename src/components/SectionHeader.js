@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { media } from '../helpers/style-utils';
+import { media } from '../utilities/style-utils';
 
 const StyledHeader = styled.header`
   margin-top: 4rem;
