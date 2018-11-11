@@ -1,81 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import styled from 'react-emotion';
 import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'emotion-theming';
 import themes from '../utilities/themes';
-import padding from '../utilities/padding';
-
-const Wrapper = styled('main')`
-  color: ${p => p.theme.textBodyPrimary};
-  background: ${p => p.theme.backgroundPrimary};
-
-  h1,
-  h2,
-  h3,
-  h4,
-  b {
-    color: ${p => p.theme.textHeaderPrimary};
-  }
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    letter-spacing: 0.03em;
-  }
-
-  a {
-    color: ${p => p.theme.accentSecondary};
-    text-decoration: none;
-  }
-`;
-
-const ThemeToggle = styled('button')`
-  position: absolute;
-  top: ${padding.small};
-  right: ${padding.small};
-  padding: 0;
-  border: none;
-  border-bottom: dashed 1px ${p => p.theme.accentSecondary};
-  background-color: transparent;
-  z-index: 1;
-  font: inherit;
-  font-size: 0.6em;
-  color: ${p => p.theme.accentSecondary};
-  cursor: pointer;
-
-  &:focus {
-    outline: none;
-  }
-`;
+import ThemeToggle from './ThemeToggle';
+import ContentWrapper from './ContentWrapper';
 
 export default class Layout extends React.PureComponent {
   static propTypes = {
     children: PropTypes.node.isRequired,
   };
 
-  state = {
-    theme: 'dark',
+  static themeKeys = {
+    dark: 'dark',
+    light: 'light',
   };
 
-  getNextTheme() {
-    const { theme } = this.state;
-    return theme === 'dark' ? 'light' : 'dark';
+  state = {
+    themeKey: Layout.themeKeys.light,
+  };
+
+  getNextThemeKey() {
+    const { themeKey } = this.state;
+
+    return themeKey === Layout.themeKeys.dark
+      ? Layout.themeKeys.light
+      : Layout.themeKeys.dark;
   }
 
   toggleTheme = () => {
-    const theme = this.getNextTheme();
-    this.setState({ theme });
+    const themeKey = this.getNextThemeKey();
+    this.setState({ themeKey });
   };
 
   render() {
     const { children } = this.props;
-    const { theme } = this.state;
+    const { themeKey } = this.state;
 
     return (
-      <ThemeProvider theme={themes[theme]}>
+      <ThemeProvider theme={themes[themeKey]}>
         <StaticQuery
           query={graphql`
             query SiteTitleQuery {
@@ -96,10 +60,12 @@ export default class Layout extends React.PureComponent {
                 <html lang="en" />
                 <title>{title}</title>
               </Helmet>
-              <ThemeToggle onClick={this.toggleTheme}>
-                switch to {this.getNextTheme()} mode
-              </ThemeToggle>
-              <Wrapper>{children}</Wrapper>
+              <ContentWrapper>
+                <ThemeToggle onClick={this.toggleTheme}>
+                  switch to {this.getNextThemeKey()} mode
+                </ThemeToggle>
+                {children}
+              </ContentWrapper>
             </>
           )}
         />

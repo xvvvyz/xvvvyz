@@ -1,42 +1,22 @@
 import React from 'react';
 import styled from 'react-emotion';
 import { css } from 'emotion';
+import Content from '../components/Content';
+import ImageMe from '../components/ImageMe';
 import Layout from '../components/Layout';
+import Section from '../components/Section';
 import breakpoints from '../utilities/breakpoints';
 import padding from '../utilities/padding';
-import ImageMe from '../components/ImageMe';
 
-const Section = styled('section')`
-  display: flex;
-  align-items: center;
-  min-height: 82vh;
-  background: ${p =>
-    p.secondary
-      ? p.theme.backgroundSecondary
-      : p.tertiary
-      ? p.theme.backgroundTertiary
-      : p.theme.backgroundPrimary};
-  clip-path: ${p =>
-    p.secondary ? 'polygon(0 0, 100% 15%, 100% 100%, 0 85%)' : 'none'};
-`;
-
-const Content = styled('div')`
-  position: relative;
-  width: 100%;
-  max-width: ${breakpoints.large};
-  margin: ${padding.larger} auto;
-  padding: 0 ${padding.small};
-`;
-
-const meWrapper = css`
+const imageMeCss = css`
   width: 100%;
   max-width: 300px;
   border-radius: 4px;
   overflow: hidden;
 `;
 
-const MeFirstWrapper = styled('div')`
-  ${meWrapper};
+const ImageMeHeroWrapper = styled('div')`
+  ${imageMeCss};
   position: absolute;
   right: ${padding.small};
   bottom: 0;
@@ -47,46 +27,39 @@ const MeFirstWrapper = styled('div')`
   }
 `;
 
-const MeSecondWrapper = styled('div')`
-  ${meWrapper};
+const ImageMeAboutWrapper = styled('div')`
+  ${imageMeCss};
 
   @media (min-width: ${breakpoints.large}) {
     display: none;
   }
 `;
 
-const Z1 = styled('div')`
-  position: relative;
-  z-index: 1;
-`;
-
 const IndexPage = () => (
   <Layout>
     <Section>
       <Content>
-        <Z1>
-          <h1>
-            Hey,
-            <br />
-            I&rsquo;m Cade.
-          </h1>
-          <p>
-            I build{' '}
-            <b>
-              <i>delightful</i>
-            </b>{' '}
-            apps for the www.
-          </p>
-        </Z1>
-        <MeFirstWrapper>
+        <h1>
+          Hey,
+          <br />
+          I&rsquo;m Cade.
+        </h1>
+        <p>
+          I build{' '}
+          <b>
+            <i>delightful</i>
+          </b>{' '}
+          apps for the www.
+        </p>
+        <ImageMeHeroWrapper>
           <ImageMe />
-        </MeFirstWrapper>
+        </ImageMeHeroWrapper>
       </Content>
     </Section>
     <Section secondary>
       <Content>
         <h2>Projects</h2>
-        <pre>TODO: add projects</pre>
+        <p>...</p>
       </Content>
     </Section>
     <Section>
@@ -102,15 +75,15 @@ const IndexPage = () => (
           </a>
           .
         </p>
-        <MeSecondWrapper>
+        <ImageMeAboutWrapper>
           <ImageMe />
-        </MeSecondWrapper>
+        </ImageMeAboutWrapper>
       </Content>
     </Section>
     <Section tertiary>
       <Content>
         <h2>Connect</h2>
-        <pre>TODO: add contact stuff</pre>
+        <p>...</p>
       </Content>
     </Section>
   </Layout>
