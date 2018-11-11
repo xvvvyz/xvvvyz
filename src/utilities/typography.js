@@ -2,9 +2,9 @@ import Typography from 'typography';
 import breakpoints from './breakpoints';
 
 const typography = new Typography({
-  baseFontSize: '20px',
+  baseFontSize: '18px',
   baseLineHeight: 1.6,
-  scaleRatio: 2.8,
+  scaleRatio: 3,
   blockMarginBottom: 0.75,
   googleFonts: [
     { name: 'Playfair Display', styles: ['700'] },
@@ -17,7 +17,7 @@ const typography = new Typography({
   boldWeight: 700,
   overrideStyles: () => ({
     [`@media (min-width: ${breakpoints.small})`]: {
-      html: { fontSize: '3.6vw' },
+      html: { fontSize: '3.2vw' },
     },
     [`@media (min-width: ${breakpoints.medium})`]: {
       html: { fontSize: '3vw' },

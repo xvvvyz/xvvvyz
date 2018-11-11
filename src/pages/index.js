@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
+import { css } from 'emotion';
 import Layout from '../components/Layout';
 import breakpoints from '../utilities/breakpoints';
 import padding from '../utilities/padding';
@@ -25,24 +26,32 @@ const Content = styled('div')`
   max-width: ${breakpoints.large};
   margin: ${padding.larger} auto;
   padding: 0 ${padding.small};
-
-  p {
-    margin: 0;
-  }
 `;
 
-const ImageMeWrapper = styled('div')`
-  position: absolute;
-  top: 4.9rem;
-  right: ${padding.small};
+const meWrapper = css`
   width: 100%;
   max-width: 300px;
   border-radius: 4px;
-  opacity: 0.3;
   overflow: hidden;
+`;
 
-  @media (min-width: ${breakpoints.medium}) {
-    opacity: 1;
+const MeFirstWrapper = styled('div')`
+  ${meWrapper};
+  position: absolute;
+  right: ${padding.small};
+  bottom: 0;
+  display: none;
+
+  @media (min-width: ${breakpoints.large}) {
+    display: block;
+  }
+`;
+
+const MeSecondWrapper = styled('div')`
+  ${meWrapper};
+
+  @media (min-width: ${breakpoints.large}) {
+    display: none;
   }
 `;
 
@@ -69,9 +78,9 @@ const IndexPage = () => (
             apps for the www.
           </p>
         </Z1>
-        <ImageMeWrapper>
+        <MeFirstWrapper>
           <ImageMe />
-        </ImageMeWrapper>
+        </MeFirstWrapper>
       </Content>
     </Section>
     <Section secondary>
@@ -93,6 +102,9 @@ const IndexPage = () => (
           </a>
           .
         </p>
+        <MeSecondWrapper>
+          <ImageMe />
+        </MeSecondWrapper>
       </Content>
     </Section>
     <Section tertiary>

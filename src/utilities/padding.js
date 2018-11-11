@@ -1,8 +1,8 @@
 import { rhythm } from './typography';
 
 export default {
-  smallest: rhythm(0.25),
-  smaller: rhythm(0.5),
+  smallest: rhythm(0.5),
+  smaller: rhythm(0.75),
   small: rhythm(1),
   medium: rhythm(1.5),
   large: rhythm(2),
