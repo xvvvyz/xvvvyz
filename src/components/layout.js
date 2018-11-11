@@ -60,13 +60,6 @@ export default class Layout extends React.PureComponent {
     theme: 'dark',
   };
 
-  componentDidMount() {
-    if (typeof localStorage === 'undefined') return;
-    const theme = localStorage.getItem('theme');
-    if (!theme) return;
-    this.setState({ theme });
-  }
-
   getNextTheme() {
     const { theme } = this.state;
     return theme === 'dark' ? 'light' : 'dark';
@@ -75,8 +68,6 @@ export default class Layout extends React.PureComponent {
   toggleTheme = () => {
     const theme = this.getNextTheme();
     this.setState({ theme });
-    if (typeof localStorage === 'undefined') return;
-    localStorage.setItem('theme', theme);
   };
 
   render() {
