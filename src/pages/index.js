@@ -1,138 +1,79 @@
-import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
-import Layout from '../components/Layout';
-import SectionGithub from '../components/SectionGithub';
-import SectionReddit from '../components/SectionReddit';
-import SectionSoundcloud from '../components/SectionSoundcloud';
-import SectionTwitter from '../components/SectionTwitter';
-import SectionUnsplash from '../components/SectionUnsplash';
+import styled from 'react-emotion';
+import Layout from '../components/layout';
+import breakpoints from '../utilities/breakpoints';
+import padding from '../utilities/padding';
 
-const HomePage = () => (
+const Section = styled('section')`
+  display: flex;
+  align-items: center;
+  min-height: 82vh;
+  background: ${p =>
+    p.secondary ? p.theme.backgroundSecondary : p.theme.backgroundPrimary};
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 ${p => (p.last ? 100 : 85)}%);
+`;
+
+const Content = styled('div')`
+  width: 100%;
+  max-width: ${breakpoints.large};
+  margin: 0 auto;
+  padding: ${padding.larger} ${padding.small};
+
+  p {
+    margin: 0;
+  }
+`;
+
+const IndexPage = () => (
   <Layout>
-    <StaticQuery
-      query={graphql`
-        query PageQuery {
-          allTweet(sort: { fields: [created_at], order: ASC }) {
-            edges {
-              node {
-                created_at
-                id_str
-                in_reply_to_status_id_str
-                text
-                entities {
-                  hashtags {
-                    text
-                  }
-                  user_mentions {
-                    screen_name
-                  }
-                  urls {
-                    display_url
-                    expanded_url
-                    indices
-                    url
-                  }
-                }
-              }
-            }
-          }
-          tweet {
-            user {
-              statuses_count
-            }
-          }
-          allUnsplashPhoto(limit: 2, sort: { fields: [created_at], order: DESC }) {
-            edges {
-              node {
-                urls {
-                  full
-                  regular
-                  small
-                }
-                created_at
-              }
-            }
-          }
-          unsplashPhoto {
-            user {
-              total_photos
-            }
-          }
-          githubViewer {
-            pinnedRepositories {
-              edges {
-                node {
-                  description
-                  homepageUrl
-                  name
-                  url
-                }
-              }
-            }
-            repositories {
-              totalCount
-            }
-          }
-          allSoundcloudFavorite(limit: 2) {
-            edges {
-              node {
-                title
-                stream_url
-                artwork_url
-                user {
-                  username
-                }
-              }
-            }
-          }
-          soundcloudUser {
-            public_favorites_count
-          }
-          allRedditPost(limit: 3) {
-            totalCount
-            edges {
-              node {
-                subreddit
-                title
-                permalink
-                preview {
-                  images {
-                    source {
-                      url
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={data => (
-        <>
-          <SectionGithub
-            repos={data.githubViewer.pinnedRepositories.edges}
-            reposCount={data.githubViewer.repositories.totalCount}
-          />
-          <SectionUnsplash
-            photos={data.allUnsplashPhoto.edges}
-            photosCount={data.unsplashPhoto.user.total_photos}
-          />
-          <SectionReddit
-            posts={data.allRedditPost.edges}
-            postsCount={data.allRedditPost.totalCount}
-          />
-          <SectionSoundcloud
-            favorites={data.allSoundcloudFavorite.edges}
-            favoritesCount={data.soundcloudUser.public_favorites_count}
-          />
-          <SectionTwitter
-            tweets={data.allTweet.edges}
-            tweetsCount={data.tweet.user.statuses_count}
-          />
-        </>
-      )}
-    />
+    <Section>
+      <Content>
+        <h1>
+          Hey,
+          <br />
+          I&rsquo;m Cade.
+        </h1>
+        <p>
+          I build{' '}
+          <b>
+            <i>delightful</i>
+          </b>{' '}
+          apps for the www.
+        </p>
+      </Content>
+    </Section>
+    <Section secondary>
+      <Content>
+        <h2>Projects</h2>
+        <pre>TODO: add projects</pre>
+      </Content>
+    </Section>
+    <Section>
+      <Content>
+        <h2>About</h2>
+        <p>
+          If I&rsquo;m not writing{' '}
+          <b>
+            <i>ridiculously trendy</i>
+          </b>{' '}
+          copy for my personal website or working on{' '}
+          <a href="https://spraoi.ai">next-gen insurance technology</a>, you
+          might find me drumming, playing a piano, perusing Reddit,
+          kiteboarding, skiing, or taking pictures of{' '}
+          <a href="https://unsplash.com/photos/zaOIgXEi45g">
+            my neighbor&rsquo;s cat
+          </a>
+          .
+        </p>
+      </Content>
+    </Section>
+    <Section secondary last>
+      <Content>
+        <h2>Connect</h2>
+        <pre>TODO: add contact stuff</pre>
+      </Content>
+    </Section>
   </Layout>
 );
 
-export default HomePage;
+export default IndexPage;
