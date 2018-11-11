@@ -57,12 +57,14 @@ export default class Layout extends React.PureComponent {
   };
 
   state = {
-    theme: Layout.getStoredTheme() || 'dark',
+    theme: 'dark',
   };
 
-  static getStoredTheme() {
+  componentDidMount() {
     if (typeof localStorage === 'undefined') return;
-    return localStorage.getItem('theme');
+    const theme = localStorage.getItem('theme');
+    if (!theme) return;
+    this.setState({ theme });
   }
 
   getNextTheme() {
