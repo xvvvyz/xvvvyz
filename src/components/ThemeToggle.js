@@ -3,7 +3,7 @@ import padding from '../utilities/padding';
 
 const ThemeToggle = styled('button')`
   position: absolute;
-  top: ${padding.sm};
+  top: ${padding.xs};
   right: ${padding.sm};
   padding: 0;
   border: none;
@@ -11,7 +11,7 @@ const ThemeToggle = styled('button')`
   background-color: transparent;
   z-index: 1;
   font: inherit;
-  font-size: 0.6em;
+  font-size: 0.75em;
   color: ${p => p.theme.accentSecondary};
   cursor: pointer;
 
