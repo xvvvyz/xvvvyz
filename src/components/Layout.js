@@ -19,8 +19,13 @@ export default class Layout extends React.PureComponent {
   };
 
   state = {
-    themeKey: Cookies.get('theme') || Layout.themeKeys.light,
+    themeKey: Layout.themeKeys.light,
   };
+
+  componentDidMount() {
+    const themeKey = Cookies.get('theme');
+    if (themeKey) this.setState({ themeKey });
+  }
 
   getNextThemeKey() {
     const { themeKey } = this.state;
