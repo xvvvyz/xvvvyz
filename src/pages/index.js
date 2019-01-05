@@ -5,6 +5,7 @@ import Content from '../components/Content';
 import ImageMe from '../components/ImageMe';
 import Layout from '../components/Layout';
 import Projects from '../components/Projects';
+import SEO from '../components/SEO';
 import Section from '../components/Section';
 import breakpoints from '../utilities/breakpoints';
 import padding from '../utilities/padding';
@@ -72,6 +73,7 @@ const SocialItem = styled.li`
 
 const IndexPage = () => (
   <Layout>
+    <SEO />
     <Section>
       <FlexContent>
         <ImageMeHeroWrapper>

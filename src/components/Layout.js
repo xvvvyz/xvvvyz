@@ -1,12 +1,10 @@
 import Cookies from 'js-cookie';
-import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
-import themes from '../utilities/themes';
-import ThemeToggle from './ThemeToggle';
 import ContentWrapper from './ContentWrapper';
+import ThemeToggle from './ThemeToggle';
+import themes from '../utilities/themes';
 
 export default class Layout extends React.PureComponent {
   static propTypes = {
@@ -47,35 +45,12 @@ export default class Layout extends React.PureComponent {
 
     return (
       <ThemeProvider theme={themes[themeKey]}>
-        <StaticQuery
-          query={graphql`
-            query SiteTitleQuery {
-              site {
-                siteMetadata {
-                  title
-                }
-              }
-            }
-          `}
-          render={({
-            site: {
-              siteMetadata: { title },
-            },
-          }) => (
-            <>
-              <Helmet>
-                <html lang="en" />
-                <title>{title}</title>
-              </Helmet>
-              <ContentWrapper>
-                <ThemeToggle onClick={this.toggleTheme}>
-                  switch to {this.getNextThemeKey()} theme
-                </ThemeToggle>
-                {children}
-              </ContentWrapper>
-            </>
-          )}
-        />
+        <ContentWrapper>
+          <ThemeToggle onClick={this.toggleTheme}>
+            switch to {this.getNextThemeKey()} theme
+          </ThemeToggle>
+          {children}
+        </ContentWrapper>
       </ThemeProvider>
     );
   }

@@ -26,6 +26,9 @@ module.exports = {
     },
   ],
   siteMetadata: {
+    author: '@cadejscroggins',
+    description:
+      'I&rsquo;m a software developer &amp; designer&hellip; Other things as well.',
     title: 'Cade Scroggins',
   },
 };
