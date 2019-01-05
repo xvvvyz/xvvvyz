@@ -1,3 +1,5 @@
+/* eslint-disable sort-keys */
+
 import Typography from 'typography';
 import breakpoints from './breakpoints';
 
@@ -16,17 +18,18 @@ const typography = new Typography({
   bodyWeight: 400,
   boldWeight: 700,
   overrideStyles: () => ({
-    [`@media (min-width: ${breakpoints.small})`]: {
+    html: { fontSize: '4.6vw' },
+    [`@media (min-width: ${breakpoints.sm})`]: {
       html: { fontSize: '3.2vw' },
     },
-    [`@media (min-width: ${breakpoints.medium})`]: {
+    [`@media (min-width: ${breakpoints.md})`]: {
       html: { fontSize: '3vw' },
     },
-    [`@media (min-width: ${breakpoints.large})`]: {
+    [`@media (min-width: ${breakpoints.lg})`]: {
       html: { fontSize: '30px' },
     },
   }),
 });
 
-export const rhythm = typography.rhythm;
+export const { rhythm } = typography;
 export default typography;

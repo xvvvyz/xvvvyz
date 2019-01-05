@@ -1,8 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import Cookies from 'js-cookie';
 import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import { ThemeProvider } from 'emotion-theming';
+import { ThemeProvider } from 'styled-components';
 import themes from '../utilities/themes';
 import ThemeToggle from './ThemeToggle';
 import ContentWrapper from './ContentWrapper';
@@ -18,7 +19,7 @@ export default class Layout extends React.PureComponent {
   };
 
   state = {
-    themeKey: Layout.themeKeys.light,
+    themeKey: Cookies.get('theme') || Layout.themeKeys.light,
   };
 
   getNextThemeKey() {
@@ -31,6 +32,7 @@ export default class Layout extends React.PureComponent {
 
   toggleTheme = () => {
     const themeKey = this.getNextThemeKey();
+    Cookies.set('theme', themeKey);
     this.setState({ themeKey });
   };
 
@@ -62,7 +64,7 @@ export default class Layout extends React.PureComponent {
               </Helmet>
               <ContentWrapper>
                 <ThemeToggle onClick={this.toggleTheme}>
-                  switch to {this.getNextThemeKey()} mode
+                  switch to {this.getNextThemeKey()} theme
                 </ThemeToggle>
                 {children}
               </ContentWrapper>

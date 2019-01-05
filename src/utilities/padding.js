@@ -1,11 +1,15 @@
+/* eslint-disable sort-keys */
+
 import { rhythm } from './typography';
 
 export default {
-  smallest: rhythm(0.5),
-  smaller: rhythm(0.75),
-  small: rhythm(1),
-  medium: rhythm(1.5),
-  large: rhythm(2),
-  larger: rhythm(3),
-  largest: rhythm(4),
+  xxxs: rhythm(0.25),
+  xxs: rhythm(0.5),
+  xs: rhythm(0.75),
+  sm: rhythm(1),
+  md: rhythm(1.5),
+  lg: rhythm(2),
+  xl: rhythm(3),
+  xxl: rhythm(4),
+  xxxl: rhythm(5),
 };

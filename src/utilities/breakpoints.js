@@ -1,7 +1,9 @@
+/* eslint-disable sort-keys */
+
 export default {
-  smaller: '400px',
-  small: '576px',
-  medium: '768px',
-  large: '992px',
-  larger: '1200px',
+  xs: '400px',
+  sm: '576px',
+  md: '768px',
+  lg: '992px',
+  xl: '1200px',
 };

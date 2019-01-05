@@ -1,10 +1,10 @@
-import styled from 'react-emotion';
+import styled from 'styled-components';
 import padding from '../utilities/padding';
 
 const ThemeToggle = styled('button')`
   position: absolute;
-  top: ${padding.small};
-  right: ${padding.small};
+  top: ${padding.sm};
+  right: ${padding.sm};
   padding: 0;
   border: none;
   border-bottom: dashed 1px ${p => p.theme.accentSecondary};

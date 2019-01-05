@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from 'styled-components';
 
 const ContentWrapper = styled('div')`
   color: ${p => p.theme.textBodyPrimary};
@@ -21,7 +21,15 @@ const ContentWrapper = styled('div')`
 
   a {
     color: ${p => p.theme.accentSecondary};
-    text-decoration: none;
+  }
+
+  ul {
+    width: 100%;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
   }
 `;
 

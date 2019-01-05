@@ -1,13 +1,17 @@
-import styled from 'react-emotion';
+import styled from 'styled-components';
 import breakpoints from '../utilities/breakpoints';
 import padding from '../utilities/padding';
 
 const Content = styled('div')`
   position: relative;
   width: 100%;
-  max-width: ${breakpoints.large};
-  margin: ${padding.larger} auto;
-  padding: 0 ${padding.small};
+  max-width: ${breakpoints.lg};
+  margin: 0 auto;
+  padding: ${padding.xxxl} ${padding.sm};
+
+  @media (min-width: ${breakpoints.lg}) {
+    padding: ${padding.xl} ${padding.sm};
+  }
 `;
 
 export default Content;
