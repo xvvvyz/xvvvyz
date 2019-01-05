@@ -70,7 +70,7 @@ const IndexPage = () => (
     </Section>
     <Section secondary>
       <FlexContent breakpoint="md">
-        <LeftContent as="h2">Featured</LeftContent>
+        <LeftContent as="h2">Projects</LeftContent>
         <Projects
           projects={[
             {
