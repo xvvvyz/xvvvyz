@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { GitHub, Instagram, Linkedin, Twitter, Users } from 'react-feather';
 import Content from '../components/Content';
 import ImageMe from '../components/ImageMe';
@@ -11,38 +11,14 @@ import breakpoints from '../utilities/breakpoints';
 import padding from '../utilities/padding';
 
 const LeftContent = styled.div`
-  margin-right: ${padding.lg};
-
-  @media (min-width: ${breakpoints.lg}) {
-    width: 100%;
-    max-width: 300px;
-    margin-right: ${padding.sm};
-  }
+  padding-right: ${padding.md};
 `;
 
-const imageMeCss = css`
+const ImageMeWrapper = styled('div')`
   width: 100%;
   max-width: 300px;
   border-radius: 4px;
   overflow: hidden;
-`;
-
-const ImageMeHeroWrapper = styled('div')`
-  ${imageMeCss};
-  display: none;
-  margin-right: ${padding.sm};
-
-  @media (min-width: ${breakpoints.lg}) {
-    display: block;
-  }
-`;
-
-const ImageMeAboutWrapper = styled('div')`
-  ${imageMeCss};
-
-  @media (min-width: ${breakpoints.lg}) {
-    display: none;
-  }
 `;
 
 const FlexContent = styled(Content)`
@@ -75,27 +51,22 @@ const IndexPage = () => (
   <Layout>
     <SEO />
     <Section>
-      <FlexContent>
-        <ImageMeHeroWrapper>
-          <ImageMe />
-        </ImageMeHeroWrapper>
-        <div>
-          <h1>
-            Hey,
-            <br />
-            I&rsquo;m Cade.
-          </h1>
-          <span>
-            I build <Delight>superb</Delight> software&mdash;some of which{' '}
-            <NoBreak>
-              is featured on the internet.{' '}
-              <span aria-label="" role="img">
-                👇
-              </span>
-            </NoBreak>
-          </span>
-        </div>
-      </FlexContent>
+      <Content>
+        <h1>
+          Hey,
+          <br />
+          I&rsquo;m Cade.
+        </h1>
+        <span>
+          I build <Delight>superb</Delight> software&mdash;some of which{' '}
+          <NoBreak>
+            is featured on the internet.{' '}
+            <span aria-label="" role="img">
+              👇
+            </span>
+          </NoBreak>
+        </span>
+      </Content>
     </Section>
     <Section secondary>
       <FlexContent breakpoint="md">
@@ -125,19 +96,21 @@ const IndexPage = () => (
       </FlexContent>
     </Section>
     <Section>
-      <Content>
-        <h2>About</h2>
-        <p>
-          I&rsquo;m officially labeled &ldquo;software engineering lead&rdquo;
-          at an insurance technology <a href="https://spraoi.ai">company</a>. I
-          tinker, kiteboard, ski &amp; play drums. My neighbor&rsquo;s cat
-          visits me{' '}
-          <a href="https://unsplash.com/photos/zaOIgXEi45g">occasionally</a>.
-        </p>
-        <ImageMeAboutWrapper>
-          <ImageMe />
-        </ImageMeAboutWrapper>
-      </Content>
+      <FlexContent breakpoint="md">
+        <LeftContent as="h2">About</LeftContent>
+        <div>
+          <p>
+            I&rsquo;m officially labeled &ldquo;software engineering lead&rdquo;
+            at an insurance technology <a href="https://spraoi.ai">company</a>.
+            I tinker, kiteboard, ski &amp; play drums. My neighbor&rsquo;s cat
+            visits me{' '}
+            <a href="https://unsplash.com/photos/zaOIgXEi45g">occasionally</a>.
+          </p>
+          <ImageMeWrapper>
+            <ImageMe />
+          </ImageMeWrapper>
+        </div>
+      </FlexContent>
     </Section>
     <Section tertiary>
       <FlexContent>

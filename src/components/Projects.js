@@ -20,6 +20,7 @@ const Project = styled.li`
 
   a {
     margin-left: ${padding.xxs};
+    font-size: 0.75em;
   }
 
   &:last-of-type {
