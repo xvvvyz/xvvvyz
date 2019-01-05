@@ -7,7 +7,7 @@ const Content = styled('div')`
   width: 100%;
   max-width: ${breakpoints.lg};
   margin: 0 auto;
-  padding: ${padding.xxxl} ${padding.sm};
+  padding: ${padding.xxl} ${padding.sm};
 
   @media (min-width: ${breakpoints.lg}) {
     padding: ${padding.xl} ${padding.sm};
