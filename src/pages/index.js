@@ -58,7 +58,7 @@ const IndexPage = () => (
           I&rsquo;m Cade.
         </h1>
         <span>
-          I build <Delight>superb</Delight> software&mdash;some of which{' '}
+          I write <Delight>superb</Delight> software&mdash;some of which{' '}
           <NoBreak>
             is featured on the internet.{' '}
             <span aria-label="" role="img">
