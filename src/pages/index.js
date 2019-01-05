@@ -126,11 +126,11 @@ const IndexPage = () => (
       <Content>
         <h2>About</h2>
         <p>
-          I&rsquo;m a &ldquo;software engineering lead&rdquo; at an insurance
-          technology <a href="https://spraoi.ai">company</a>. I tinker,
-          kiteboard, ski &amp; play drums. My neighbor&rsquo;s cat visits me{' '}
+          I&rsquo;m officially labeled &ldquo;software engineering lead&rdquo;
+          at an insurance technology <a href="https://spraoi.ai">company</a>. I
+          tinker, kiteboard, ski &amp; play drums. My neighbor&rsquo;s cat
+          visits me{' '}
           <a href="https://unsplash.com/photos/zaOIgXEi45g">occasionally</a>.
-          I&rsquo;m not addicted to coffee.
         </p>
         <ImageMeAboutWrapper>
           <ImageMe />
