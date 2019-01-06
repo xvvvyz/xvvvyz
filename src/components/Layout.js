@@ -17,7 +17,7 @@ export default class Layout extends React.PureComponent {
   };
 
   state = {
-    themeKey: Layout.themeKeys.dark,
+    themeKey: Layout.themeKeys.light,
   };
 
   componentDidMount() {
