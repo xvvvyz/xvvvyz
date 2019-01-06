@@ -10,7 +10,7 @@ const typography = new Typography({
   blockMarginBottom: 0.75,
   googleFonts: [
     { name: 'Playfair Display', styles: ['700'] },
-    { name: 'Fira Sans', styles: ['400', '400i', '700', '700i'] },
+    { name: 'Fira Sans', styles: ['400', '700', '700i'] },
   ],
   headerFontFamily: ['Playfair Display', 'serif'],
   bodyFontFamily: ['Fira Sans', 'sans-serif'],

@@ -11,11 +11,13 @@ const Project = styled.li`
   margin-bottom: ${padding.xxs};
   background: ${p => p.theme.backgroundPrimary};
   border-radius: 4px;
-  padding: ${padding.xxs};
+  padding: ${padding.xxxs} ${padding.xxs};
 
   h3 {
-    font-size: 1rem;
     margin: 0;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
   }
 
   a {

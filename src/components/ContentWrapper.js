@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { transitionSpeed } from '../utilities/animations';
 
 const ContentWrapper = styled('div')`
   color: ${p => p.theme.textBodyPrimary};
@@ -20,7 +21,14 @@ const ContentWrapper = styled('div')`
   }
 
   a {
+    transition: color ${transitionSpeed};
     color: ${p => p.theme.accentSecondary};
+    text-decoration: none;
+
+    &:hover {
+      color: ${p => p.theme.textBodyPrimary};
+      text-decoration: underline;
+    }
   }
 
   ul {

@@ -3,12 +3,13 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-svgr',
     'gatsby-transformer-sharp',
     {
       options: {
         background_color: '#fff',
         display: 'minimal-ui',
-        icon: 'src/images/icon.png',
+        icon: 'src/images/icon.svg',
         name: 'Cade Scroggins',
         short_name: 'Cade Scroggins',
         start_url: '/',

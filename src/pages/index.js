@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GitHub, Instagram, Linkedin, Twitter, Users } from 'react-feather';
+import { GitHub, Instagram, Linkedin, Twitter, Box } from 'react-feather';
 import Content from '../components/Content';
 import ImageMe from '../components/ImageMe';
 import Layout from '../components/Layout';
@@ -9,6 +9,12 @@ import SEO from '../components/SEO';
 import Section from '../components/Section';
 import breakpoints from '../utilities/breakpoints';
 import padding from '../utilities/padding';
+import { ReactComponent as Heart } from '../images/icon.svg';
+
+const StyledHeart = styled(Heart)`
+  width: 24px;
+  margin-top: ${padding.xs};
+`;
 
 const LeftContent = styled.div`
   padding-right: ${padding.md};
@@ -44,6 +50,10 @@ const SocialItem = styled.li`
 
   a {
     margin-left: ${padding.xxxs};
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
   }
 `;
 
@@ -97,7 +107,7 @@ const IndexPage = () => (
     </Section>
     <Section>
       <FlexContent breakpoint="md">
-        <LeftContent as="h2">About</LeftContent>
+        <LeftContent as="h2">Profile</LeftContent>
         <div>
           <p>
             I&rsquo;m officially labeled &ldquo;software engineering lead&rdquo;
@@ -114,7 +124,7 @@ const IndexPage = () => (
     </Section>
     <Section tertiary>
       <FlexContent>
-        <LeftContent as="h2">Connect</LeftContent>
+        <LeftContent as="h2">Elsewhere</LeftContent>
         <ul>
           <SocialItem>
             <GitHub />
@@ -129,12 +139,15 @@ const IndexPage = () => (
             <a href="https://www.linkedin.com/in/cadejscroggins">LinkedIn</a>
           </SocialItem>
           <SocialItem>
-            <Users />
+            <Box />
             <a href="https://www.reddit.com/user/cadejscroggins">Reddit</a>
           </SocialItem>
           <SocialItem>
             <Twitter />
             <a href="https://twitter.com/cadejscroggins">Twitter</a>
+          </SocialItem>
+          <SocialItem>
+            <StyledHeart alt="" />
           </SocialItem>
         </ul>
       </FlexContent>
