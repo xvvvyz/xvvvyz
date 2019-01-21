@@ -12,6 +12,21 @@ import breakpoints from '../utilities/breakpoints';
 import padding from '../utilities/padding';
 import { ReactComponent as Heart } from '../images/icon.svg';
 
+const Dash = styled.div`
+  display: none;
+  content: ' ';
+  width: 100%;
+  height: 0.5rem;
+  margin-top: ${padding.sm};
+  border-radius: 4px;
+  transform: scaleX(-1);
+  background: ${p => p.theme.textBodyPrimary};
+
+  @media (min-width: ${breakpoints.md}) {
+    display: block;
+  }
+`;
+
 const StyledHeart = styled(Heart)`
   width: 24px;
   margin-top: ${padding.xs};
@@ -73,21 +88,26 @@ const IndexPage = () => (
   <Layout>
     <SEO />
     <Section>
-      <Content>
-        <h1>
-          <div>Hey,</div>
-          <div>I&rsquo;m Cade.</div>
-        </h1>
-        <span>
-          I write <Delight>superb</Delight> software&mdash;some of which{' '}
-          <NoBreak>
-            is featured on the internet.{' '}
-            <span aria-label="" role="img">
-              👇
-            </span>
-          </NoBreak>
-        </span>
-      </Content>
+      <FlexContent breakpoint="md">
+        <LeftContent>
+          <Dash />
+        </LeftContent>
+        <div>
+          <h1>
+            <div>Hey,</div>
+            <div>I&rsquo;m Cade.</div>
+          </h1>
+          <span>
+            I write <Delight>superb</Delight> software&mdash;some of which{' '}
+            <NoBreak>
+              is featured on the internet.{' '}
+              <span aria-label="" role="img">
+                👇
+              </span>
+            </NoBreak>
+          </span>
+        </div>
+      </FlexContent>
     </Section>
     <Section secondary>
       <FlexContent breakpoint="md">
