@@ -29,7 +29,7 @@ module.exports = {
   siteMetadata: {
     author: '@cadejscroggins',
     description:
-      'I&rsquo;m a software developer &amp; designer&hellip; Other things as well.',
+      'Hey, I&rsquo;m Cade. This site is a good place to start if you&rsquo;re trying to stalk me. ✌️',
     title: 'Cade Scroggins',
   },
 };
