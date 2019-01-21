@@ -10,18 +10,18 @@
   },
   "dependencies": {
     "@svgr/webpack": "^4.1.0",
-    "gatsby": "^2.0.85",
-    "gatsby-image": "^2.0.25",
+    "gatsby": "^2.0.91",
+    "gatsby-image": "^2.0.26",
     "gatsby-plugin-manifest": "^2.0.13",
     "gatsby-plugin-react-helmet": "^3.0.5",
     "gatsby-plugin-sharp": "^2.0.17",
     "gatsby-plugin-styled-components": "^3.0.4",
     "gatsby-plugin-svgr": "^2.0.1",
-    "gatsby-plugin-typography": "^2.2.4",
-    "gatsby-source-filesystem": "^2.0.12",
+    "gatsby-plugin-typography": "^2.2.5",
+    "gatsby-source-filesystem": "^2.0.16",
     "gatsby-transformer-sharp": "^2.1.10",
     "js-cookie": "^2.2.0",
-    "polished": "^2.3.1",
+    "polished": "^2.3.3",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -32,9 +32,9 @@
     "typography": "^0.16.18"
   },
   "devDependencies": {
-    "@spraoi/eslint-config": "^0.17.13",
-    "@spraoi/prettier-config": "^0.17.0",
-    "eslint": "^5.12.0",
-    "prettier": "^1.15.3"
+    "@spraoi/eslint-config": "^0.17.16",
+    "@spraoi/prettier-config": "^0.17.16",
+    "eslint": "^5.12.1",
+    "prettier": "^1.16.0"
   }
 }

@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { GitHub, Instagram, Linkedin, Twitter, Box } from 'react-feather';
+import { GitHub, Instagram, Linkedin, Twitter } from 'react-feather';
 import Content from '../components/Content';
 import ImageMe from '../components/ImageMe';
 import Layout from '../components/Layout';
@@ -17,7 +18,14 @@ const StyledHeart = styled(Heart)`
 `;
 
 const LeftContent = styled.div`
+  width: 100%;
   padding-right: ${padding.md};
+
+  @media (min-width: ${breakpoints.md}) {
+    flex-shrink: 0;
+    width: 11rem;
+    text-align: right;
+  }
 `;
 
 const ImageMeWrapper = styled('div')`
@@ -34,6 +42,10 @@ const FlexContent = styled(Content)`
     display: flex;
   }
 `;
+
+FlexContent.propTypes = {
+  breakpoint: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+};
 
 const Delight = styled.span`
   font-weight: bold;
@@ -63,9 +75,8 @@ const IndexPage = () => (
     <Section>
       <Content>
         <h1>
-          Hey,
-          <br />
-          I&rsquo;m Cade.
+          <div>Hey,</div>
+          <div>I&rsquo;m Cade.</div>
         </h1>
         <span>
           I write <Delight>superb</Delight> software&mdash;some of which{' '}
@@ -87,7 +98,7 @@ const IndexPage = () => (
               codeLink: 'https://github.com/cadejscroggins/oern.tv',
               description: 'Live video feeds from earth.',
               siteLink: 'https://oern.tv',
-              title: 'OERN',
+              title: 'On Earth Right Now',
             },
             {
               codeLink: 'https://github.com/cadejscroggins/linerad.io',
@@ -110,11 +121,13 @@ const IndexPage = () => (
         <LeftContent as="h2">Profile</LeftContent>
         <div>
           <p>
-            I&rsquo;m officially labeled &ldquo;software engineering lead&rdquo;
-            at an insurance technology <a href="https://spraoi.ai">company</a>.
-            I tinker, kiteboard, ski &amp; play drums. My neighbor&rsquo;s cat
-            visits me{' '}
-            <a href="https://unsplash.com/photos/zaOIgXEi45g">occasionally</a>.
+            I spend most days working on next-gen{' '}
+            <a href="https://spraoi.ai">insurance technology</a>, but
+            occasionally I&rsquo;ll take pictures of my{' '}
+            <a href="https://unsplash.com/photos/zaOIgXEi45g">
+              neighbor&rsquo;s cat
+            </a>
+            .
           </p>
           <ImageMeWrapper>
             <ImageMe />
@@ -124,23 +137,19 @@ const IndexPage = () => (
     </Section>
     <Section tertiary>
       <FlexContent>
-        <LeftContent as="h2">Elsewhere</LeftContent>
+        <LeftContent as="h2">Links</LeftContent>
         <ul>
           <SocialItem>
             <GitHub />
             <a href="https://github.com/cadejscroggins">GitHub</a>
           </SocialItem>
           <SocialItem>
-            <Instagram />
-            <a href="https://www.instagram.com/cadejscroggins">Instagram</a>
-          </SocialItem>
-          <SocialItem>
             <Linkedin />
             <a href="https://www.linkedin.com/in/cadejscroggins">LinkedIn</a>
           </SocialItem>
           <SocialItem>
-            <Box />
-            <a href="https://www.reddit.com/user/cadejscroggins">Reddit</a>
+            <Instagram />
+            <a href="https://www.instagram.com/cadejscroggins">Instagram</a>
           </SocialItem>
           <SocialItem>
             <Twitter />
