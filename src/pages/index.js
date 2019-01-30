@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { GitHub, Instagram, Linkedin, Twitter } from 'react-feather';
 import Content from '../components/Content';
 import ImageMe from '../components/ImageMe';
+import ImageMeTwo from '../components/ImageMeTwo';
 import Layout from '../components/Layout';
 import Projects from '../components/Projects';
 import SEO from '../components/SEO';
@@ -12,18 +13,47 @@ import breakpoints from '../utilities/breakpoints';
 import padding from '../utilities/padding';
 import { ReactComponent as Heart } from '../images/icon.svg';
 
-const Dash = styled.div`
-  display: none;
-  content: ' ';
-  width: 100%;
-  height: 0.5rem;
+const ImageWrapper = css`
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &::before {
+    content: "${p => `v${p.version}`}";
+    position: absolute;
+    top: ${padding.xxxs};
+    right: ${padding.xxxs};
+    z-index: 1;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: ${p => p.theme.backgroundSecondary};
+    opacity: 0.15;
+  }
+`;
+
+ImageWrapper.propTypes = {
+  version: PropTypes.string,
+};
+
+const ImageMeTwoWrapper = styled.div`
+  ${ImageWrapper};
+  max-width: 258px;
   margin-top: ${padding.sm};
-  border-radius: 4px;
-  transform: scaleX(-1);
-  background: ${p => p.theme.textBodyPrimary};
 
   @media (min-width: ${breakpoints.md}) {
-    display: block;
+    margin-top: -${padding.sm};
   }
 `;
 
@@ -33,33 +63,39 @@ const StyledHeart = styled(Heart)`
 `;
 
 const LeftContent = styled.div`
+  order: ${p => p.mobileOrder};
   width: 100%;
   padding-right: ${padding.md};
 
   @media (min-width: ${breakpoints.md}) {
+    order: initial;
     flex-shrink: 0;
     width: 11rem;
     text-align: right;
   }
 `;
 
+LeftContent.propTypes = {
+  mobileOrder: PropTypes.number,
+};
+
 const ImageMeWrapper = styled('div')`
+  ${ImageWrapper};
   width: 100%;
   max-width: 300px;
-  border-radius: 4px;
-  overflow: hidden;
 `;
 
 const FlexContent = styled(Content)`
-  display: ${p => (p.breakpoint ? 'block' : 'flex')};
+  display: flex;
+  flex-direction: ${p => (p.noColumn ? 'row' : 'column')};
 
-  @media (min-width: ${p => breakpoints[p.breakpoint]}) {
-    display: flex;
+  @media (min-width: ${breakpoints.md}) {
+    flex-direction: row;
   }
 `;
 
 FlexContent.propTypes = {
-  breakpoint: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  noColumn: PropTypes.bool,
 };
 
 const Delight = styled.span`
@@ -88,9 +124,11 @@ const IndexPage = () => (
   <Layout>
     <SEO />
     <Section>
-      <FlexContent breakpoint="md">
-        <LeftContent>
-          <Dash />
+      <FlexContent>
+        <LeftContent mobileOrder={2}>
+          <ImageMeTwoWrapper version="23.11.29">
+            <ImageMeTwo />
+          </ImageMeTwoWrapper>
         </LeftContent>
         <div>
           <h1>
@@ -137,7 +175,7 @@ const IndexPage = () => (
       </FlexContent>
     </Section>
     <Section>
-      <FlexContent breakpoint="md">
+      <FlexContent>
         <LeftContent as="h2">Profile</LeftContent>
         <div>
           <p>
@@ -149,14 +187,14 @@ const IndexPage = () => (
             </a>
             .
           </p>
-          <ImageMeWrapper>
+          <ImageMeWrapper version="3.1.3">
             <ImageMe />
           </ImageMeWrapper>
         </div>
       </FlexContent>
     </Section>
     <Section tertiary>
-      <FlexContent>
+      <FlexContent noColumn>
         <LeftContent as="h2">Links</LeftContent>
         <ul>
           <SocialItem>
