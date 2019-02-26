@@ -11,7 +11,7 @@ const Section = styled('section')`
     return p.theme.backgroundPrimary;
   }};
   clip-path: ${p =>
-    p.secondary ? 'polygon(0 0, 100% 15%, 100% 100%, 0 85%)' : 'none'};
+    p.secondary ? 'polygon(0 10%, 100% 0, 100% 90%, 0 100%)' : 'none'};
 `;
 
 Section.propTypes = {

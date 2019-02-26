@@ -5,6 +5,10 @@ import { ThemeProvider } from 'styled-components';
 import ContentWrapper from './ContentWrapper';
 import ThemeToggle from './ThemeToggle';
 import themes from '../utilities/themes';
+import '../fonts/fira-sans/400.css';
+import '../fonts/fira-sans/700.css';
+import '../fonts/fira-sans/700i.css';
+import '../fonts/playfair-display/700.css';
 
 export default class Layout extends React.PureComponent {
   static propTypes = {

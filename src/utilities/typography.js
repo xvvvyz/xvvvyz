@@ -8,10 +8,6 @@ const typography = new Typography({
   baseLineHeight: 1.6,
   scaleRatio: 3,
   blockMarginBottom: 0.75,
-  googleFonts: [
-    { name: 'Playfair Display', styles: ['700'] },
-    { name: 'Fira Sans', styles: ['400', '700', '700i'] },
-  ],
   headerFontFamily: ['Playfair Display', 'serif'],
   bodyFontFamily: ['Fira Sans', 'sans-serif'],
   headerWeight: 700,

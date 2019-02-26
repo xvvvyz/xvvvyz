@@ -18,19 +18,6 @@ const ImageWrapper = css`
   border-radius: 5px;
   overflow: hidden;
 
-  &::before {
-    content: "${p => `v${p.version}`}";
-    position: absolute;
-    top: ${padding.xxxs};
-    right: ${padding.xxxs};
-    z-index: 1;
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-
   &::after {
     content: ' ';
     position: absolute;
@@ -39,21 +26,17 @@ const ImageWrapper = css`
     width: 100%;
     height: 100%;
     background: ${p => p.theme.backgroundSecondary};
-    opacity: 0.15;
+    opacity: 0.1;
   }
 `;
 
-ImageWrapper.propTypes = {
-  version: PropTypes.string,
-};
-
 const ImageMeTwoWrapper = styled.div`
   ${ImageWrapper};
-  max-width: 258px;
+  max-width: 11rem;
   margin-top: ${padding.sm};
 
   @media (min-width: ${breakpoints.md}) {
-    margin-top: -${padding.sm};
+    margin-top: 0;
   }
 `;
 
@@ -82,7 +65,11 @@ LeftContent.propTypes = {
 const ImageMeWrapper = styled('div')`
   ${ImageWrapper};
   width: 100%;
-  max-width: 300px;
+  max-width: 14rem;
+
+  @media (min-width: ${breakpoints.md}) {
+    max-width: 10rem;
+  }
 `;
 
 const FlexContent = styled(Content)`
@@ -126,7 +113,7 @@ const IndexPage = () => (
     <Section>
       <FlexContent>
         <LeftContent mobileOrder={2}>
-          <ImageMeTwoWrapper version="23.11.29">
+          <ImageMeTwoWrapper>
             <ImageMeTwo />
           </ImageMeTwoWrapper>
         </LeftContent>
@@ -187,7 +174,7 @@ const IndexPage = () => (
             </a>
             .
           </p>
-          <ImageMeWrapper version="3.1.3">
+          <ImageMeWrapper>
             <ImageMe />
           </ImageMeWrapper>
         </div>
