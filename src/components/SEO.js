@@ -11,8 +11,8 @@ const SEO = ({ description, lang, meta, path, title }) => (
           siteMetadata {
             author
             description
+            siteUrl
             title
-            url
           }
         }
       }
@@ -36,7 +36,7 @@ const SEO = ({ description, lang, meta, path, title }) => (
           title={title || siteMetadata.title}
           titleTemplate={title ? `%s | ${siteMetadata.title}` : '%s'}
         >
-          <link href={`${siteMetadata.url}${path}`} rel="canonical" />
+          <link href={`${siteMetadata.siteUrl}${path}`} rel="canonical" />
         </Helmet>
       );
     }}

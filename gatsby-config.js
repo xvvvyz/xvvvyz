@@ -2,6 +2,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-svgr',
     'gatsby-transformer-sharp',
@@ -30,7 +31,7 @@ module.exports = {
     author: '@cadejscroggins',
     description:
       'Cade Scroggins is a software developer & designer from the Pacific Northwest. Stop by for some juicy details. ✌️',
+    siteUrl: 'https://cadejs.com',
     title: 'Cade Scroggins',
-    url: 'https://cadejs.com',
   },
 };
