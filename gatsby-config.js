@@ -29,7 +29,8 @@ module.exports = {
   siteMetadata: {
     author: '@cadejscroggins',
     description:
-      'Hey, I&rsquo;m Cade. This site is a good place to start if you&rsquo;re trying to stalk me. ✌️',
+      'Cade Scroggins is a software developer & designer from the Pacific Northwest. Stop by for some juicy details. ✌️',
     title: 'Cade Scroggins',
+    url: 'https://cadejs.com',
   },
 };

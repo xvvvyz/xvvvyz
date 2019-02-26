@@ -119,8 +119,7 @@ const IndexPage = () => (
         </LeftContent>
         <div>
           <h1>
-            <div>Hey,</div>
-            <div>I&rsquo;m Cade.</div>
+            Hey, <NoBreak>I&rsquo;m Cade</NoBreak>
           </h1>
           <span>
             I write <Delight>superb</Delight> software&mdash;some of which{' '}
@@ -139,6 +138,13 @@ const IndexPage = () => (
         <LeftContent as="h2">Projects</LeftContent>
         <Projects
           projects={[
+            {
+              codeLink:
+                'https://github.com/cadejscroggins/digital-security-guide',
+              description: 'It’s worth it.',
+              siteLink: 'https://digitalsecurity.guide',
+              title: 'Digital Security Guide',
+            },
             {
               codeLink: 'https://github.com/cadejscroggins/oern.tv',
               description: 'Live video feeds from earth.',
@@ -167,8 +173,8 @@ const IndexPage = () => (
         <div>
           <p>
             I spend most days working on next-gen{' '}
-            <a href="https://spraoi.ai">insurance technology</a>, but
-            occasionally I&rsquo;ll take pictures of my{' '}
+            <a href="https://spraoi.ai">insurance technology</a>, but occasionally
+            I&rsquo;ll take pictures of my{' '}
             <a href="https://unsplash.com/photos/zaOIgXEi45g">
               neighbor&rsquo;s cat
             </a>

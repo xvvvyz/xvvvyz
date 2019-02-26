@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-const SEO = ({ description, keywords, lang, meta, title }) => (
+const SEO = ({ description, lang, meta, path, title }) => (
   <StaticQuery
     query={graphql`
       query DefaultSEOQuery {
         site {
           siteMetadata {
-            title
-            description
             author
+            description
+            title
+            url
           }
         }
       }
@@ -31,16 +32,12 @@ const SEO = ({ description, keywords, lang, meta, title }) => (
             { content: siteMetadata.author, name: 'twitter:creator' },
             { content: title || siteMetadata.title, name: 'twitter:title' },
             { content: title || siteMetadata.title, property: 'og:title' },
-          ]
-            .concat(
-              keywords.length > 0
-                ? { content: keywords.join(', '), name: 'keywords' }
-                : []
-            )
-            .concat(meta)}
+          ].concat(meta)}
           title={title || siteMetadata.title}
           titleTemplate={title ? `%s | ${siteMetadata.title}` : '%s'}
-        />
+        >
+          <link href={`${siteMetadata.url}${path}`} rel="canonical" />
+        </Helmet>
       );
     }}
   />
@@ -48,7 +45,6 @@ const SEO = ({ description, keywords, lang, meta, title }) => (
 
 SEO.propTypes = {
   description: PropTypes.string,
-  keywords: PropTypes.arrayOf(PropTypes.string),
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(
     PropTypes.shape({
@@ -57,14 +53,15 @@ SEO.propTypes = {
       property: PropTypes.string,
     })
   ),
+  path: PropTypes.string,
   title: PropTypes.string,
 };
 
 SEO.defaultProps = {
   description: null,
-  keywords: [],
   lang: 'en',
   meta: [],
+  path: '/',
   title: null,
 };
 
