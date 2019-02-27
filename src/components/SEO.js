@@ -2,6 +2,7 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
+import Me from '../images/me-keeb-circle.jpg';
 
 const SEO = ({ description, lang, meta, path, title }) => (
   <StaticQuery
@@ -37,6 +38,32 @@ const SEO = ({ description, lang, meta, path, title }) => (
           titleTemplate={title ? `%s | ${siteMetadata.title}` : '%s'}
         >
           <link href={`${siteMetadata.siteUrl}${path}`} rel="canonical" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              '@context': 'http://schema.org/',
+              '@type': 'Person',
+              email: 'me@cadejs.com',
+              familyName: 'Scroggins',
+              givenName: 'Cade',
+              image: `${siteMetadata.siteUrl}${Me}`,
+              jobTitle: 'Software Engineering Lead',
+              mainEntityOfPage: siteMetadata.siteUrl,
+              name: 'Cade Scroggins',
+              sameAs: [
+                'https://github.com/cadejscroggins',
+                'https://www.linkedin.com/in/cadejscroggins',
+                'https://www.instagram.com/cadejscroggins',
+                'https://twitter.com/cadejscroggins',
+              ],
+              worksFor: {
+                '@type': 'Organization',
+                description:
+                  'An insurtech solutions provider with a focus on machine learning.',
+                mainEntityOfPage: 'https://spraoi.ai',
+                name: 'Spraoi',
+              },
+            })}
+          </script>
         </Helmet>
       );
     }}
