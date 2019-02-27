@@ -42,8 +42,7 @@ const SEO = ({ description, lang, meta, path, title }) => (
             {JSON.stringify({
               '@context': 'http://schema.org/',
               '@type': 'Person',
-              description:
-                'Cade Scroggins is a software developer & designer from the Pacific Northwest. Stop by for some juicy details. ✌',
+              description: siteMetadata.description,
               email: 'me@cadejs.com',
               familyName: 'Scroggins',
               givenName: 'Cade',
