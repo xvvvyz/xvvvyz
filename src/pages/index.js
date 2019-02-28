@@ -157,12 +157,12 @@ const IndexPage = () => (
               siteLink: 'https://linerad.io',
               title: 'Line Radio',
             },
-            {
-              codeLink: 'https://github.com/cadejscroggins/tilde',
-              description: 'Minimal browser startpage.',
-              siteLink: 'https://tilde.cadejs.com',
-              title: 'Tilde',
-            },
+            // {
+            //   codeLink: 'https://github.com/cadejscroggins/tilde',
+            //   description: 'Minimal browser startpage.',
+            //   siteLink: 'https://tilde.cadejs.com',
+            //   title: 'Tilde',
+            // },
           ]}
         />
       </FlexContent>

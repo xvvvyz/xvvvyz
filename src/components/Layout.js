@@ -1,4 +1,5 @@
 import Cookies from 'js-cookie';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
@@ -21,7 +22,7 @@ export default class Layout extends React.PureComponent {
   };
 
   state = {
-    themeKey: Layout.themeKeys.light,
+    themeKey: Layout.themeKeys.dark,
   };
 
   componentDidMount() {
@@ -50,6 +51,12 @@ export default class Layout extends React.PureComponent {
     return (
       <ThemeProvider theme={themes[themeKey]}>
         <ContentWrapper>
+          <Helmet>
+            <meta
+              content={themes[themeKey].backgroundPrimary}
+              name="theme-color"
+            />
+          </Helmet>
           <ThemeToggle onClick={this.toggleTheme}>
             switch to {this.getNextThemeKey()} theme
           </ThemeToggle>
