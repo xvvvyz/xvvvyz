@@ -14,7 +14,6 @@ module.exports = {
         name: 'Cade Scroggins',
         short_name: 'Cade Scroggins',
         start_url: '/',
-        theme_color: '#24252a',
       },
       resolve: 'gatsby-plugin-manifest',
     },
