@@ -3,15 +3,14 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { GitHub, Instagram, Linkedin, Twitter } from 'react-feather';
 import Content from '../components/Content';
+import Heart from '../images/icon.svg';
 import ImageMe from '../components/ImageMe';
-import ImageMeTwo from '../components/ImageMeTwo';
 import Layout from '../components/Layout';
 import Projects from '../components/Projects';
 import SEO from '../components/SEO';
 import Section from '../components/Section';
 import breakpoints from '../utilities/breakpoints';
 import padding from '../utilities/padding';
-import { ReactComponent as Heart } from '../images/icon.svg';
 
 const ImageWrapper = css`
   position: relative;
@@ -27,16 +26,6 @@ const ImageWrapper = css`
     height: 100%;
     background: ${p => p.theme.backgroundSecondary};
     opacity: 0.1;
-  }
-`;
-
-const ImageMeTwoWrapper = styled.div`
-  ${ImageWrapper};
-  max-width: 11rem;
-  margin-top: ${padding.sm};
-
-  @media (min-width: ${breakpoints.md}) {
-    margin-top: 0;
   }
 `;
 
@@ -112,14 +101,9 @@ const IndexPage = () => (
     <SEO />
     <Section>
       <FlexContent>
-        <LeftContent mobileOrder={2}>
-          <ImageMeTwoWrapper>
-            <ImageMeTwo />
-          </ImageMeTwoWrapper>
-        </LeftContent>
         <div>
           <h1>
-            Hey, <NoBreak>I&rsquo;m Cade</NoBreak>
+            Hey, <NoBreak>I&rsquo;m Cade.</NoBreak>
           </h1>
           <span>
             I write <Delight>superb</Delight> software&mdash;some of which{' '}
@@ -157,12 +141,12 @@ const IndexPage = () => (
               siteLink: 'https://linerad.io',
               title: 'Line Radio',
             },
-            // {
-            //   codeLink: 'https://github.com/cadejscroggins/tilde',
-            //   description: 'Minimal browser startpage.',
-            //   siteLink: 'https://tilde.cadejs.com',
-            //   title: 'Tilde',
-            // },
+            {
+              codeLink: 'https://github.com/cadejscroggins/tilde',
+              description: 'Minimal browser startpage.',
+              siteLink: 'https://tilde.cadejs.com',
+              title: 'Tilde',
+            },
           ]}
         />
       </FlexContent>
@@ -173,8 +157,8 @@ const IndexPage = () => (
         <div>
           <p>
             I spend most days working on next-gen{' '}
-            <a href="https://spraoi.ai">insurance technology</a>, but occasionally
-            I&rsquo;ll take pictures of my{' '}
+            <a href="https://spraoi.ai">insurance technology</a>, but
+            occasionally I&rsquo;ll take pictures of my{' '}
             <a href="https://unsplash.com/photos/zaOIgXEi45g">
               neighbor&rsquo;s cat
             </a>

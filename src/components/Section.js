@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Section = styled('section')`
   display: flex;
   align-items: center;
-  min-height: 80vh;
+  min-height: 83vh;
   background: ${p => {
     if (p.secondary) return p.theme.backgroundSecondary;
     if (p.tertiary) return p.theme.backgroundTertiary;
