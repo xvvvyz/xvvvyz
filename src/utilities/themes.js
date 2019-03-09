@@ -18,9 +18,9 @@ export default {
   dark: {
     accentPrimary: pink,
     accentSecondary: orange,
-    backgroundPrimary: offBlack,
+    backgroundPrimary: offBlackDark,
     backgroundSecondary: `linear-gradient(to right, ${pink}, ${orange})`,
-    backgroundTertiary: offBlackDark,
+    backgroundTertiary: offBlack,
     textBodyPrimary: whiteTransparent,
     textHeaderPrimary: white,
   },
