@@ -96,14 +96,20 @@ const SocialItem = styled.li`
   }
 `;
 
+const Hero = styled.div`
+  @media (min-width: ${breakpoints.sm}) {
+    text-align: center;
+  }
+`;
+
 const IndexPage = () => (
   <Layout>
     <SEO />
     <Section>
       <FlexContent>
-        <div>
+        <Hero>
           <h1>
-            Hey, <NoBreak>I&rsquo;m Cade.</NoBreak>
+            Hey, <NoBreak>I&rsquo;m Cade</NoBreak>
           </h1>
           <span>
             I write <Delight>superb</Delight> software&mdash;some of which{' '}
@@ -114,7 +120,7 @@ const IndexPage = () => (
               </span>
             </NoBreak>
           </span>
-        </div>
+        </Hero>
       </FlexContent>
     </Section>
     <Section secondary>
