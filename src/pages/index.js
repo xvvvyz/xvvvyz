@@ -129,13 +129,6 @@ const IndexPage = () => (
         <Projects
           projects={[
             {
-              codeLink:
-                'https://github.com/cadejscroggins/digital-security-guide',
-              description: 'It’s worth it.',
-              siteLink: 'https://digitalsecurity.guide',
-              title: 'Digital Security Guide',
-            },
-            {
               codeLink: 'https://github.com/cadejscroggins/oern.tv',
               description: 'Live video feeds from earth.',
               siteLink: 'https://oern.tv',
