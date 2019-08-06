@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { GitHub, Instagram, Linkedin, Twitter } from 'react-feather';
 import Content from '../components/Content';
 import Heart from '../images/icon.svg';
@@ -12,9 +12,53 @@ import Section from '../components/Section';
 import breakpoints from '../utilities/breakpoints';
 import padding from '../utilities/padding';
 
-const ImageWrapper = css`
+const FlexContent = styled(Content)`
+  display: flex;
+  flex-direction: ${p => (p.noColumn ? 'row' : 'column')};
+
+  @media (min-width: ${breakpoints.md}) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: ${p => (p.center ? 'center' : 'flex-start')};
+  }
+`;
+
+FlexContent.propTypes = {
+  center: PropTypes.bool,
+  noColumn: PropTypes.bool,
+};
+
+const LeftContent = styled.div`
+  order: ${p => p.mobileOrder};
+  width: 100%;
+  padding-right: ${padding.md};
+
+  @media (min-width: ${breakpoints.md}) {
+    order: initial;
+    flex-shrink: 0;
+    width: 12rem;
+    text-align: right;
+  }
+`;
+
+LeftContent.propTypes = {
+  mobileOrder: PropTypes.number,
+};
+
+const Delight = styled.span`
+  font-weight: bold;
+  font-style: italic;
+`;
+
+const NoBreak = styled.span`
+  white-space: nowrap;
+`;
+
+const ImageMeWrapper = styled('div')`
   position: relative;
-  border-radius: 5px;
+  width: 100%;
+  max-width: 10rem;
+  border-radius: 10px;
   overflow: hidden;
 
   &::after {
@@ -25,62 +69,16 @@ const ImageWrapper = css`
     width: 100%;
     height: 100%;
     background: ${p => p.theme.backgroundSecondary};
-    opacity: 0.2;
+    opacity: 0.1;
   }
 `;
 
-const StyledHeart = styled(Heart)`
-  width: 24px;
-  margin-top: ${padding.xs};
-`;
-
-const LeftContent = styled.div`
-  order: ${p => p.mobileOrder};
-  width: 100%;
-  padding-right: ${padding.md};
+const Hero = styled.div`
+  padding-top: ${padding.sm};
 
   @media (min-width: ${breakpoints.md}) {
-    order: initial;
-    flex-shrink: 0;
-    width: 11rem;
-    text-align: right;
+    padding-top: 0;
   }
-`;
-
-LeftContent.propTypes = {
-  mobileOrder: PropTypes.number,
-};
-
-const ImageMeWrapper = styled('div')`
-  ${ImageWrapper};
-  width: 100%;
-  max-width: 14rem;
-
-  @media (min-width: ${breakpoints.md}) {
-    max-width: 10rem;
-  }
-`;
-
-const FlexContent = styled(Content)`
-  display: flex;
-  flex-direction: ${p => (p.noColumn ? 'row' : 'column')};
-
-  @media (min-width: ${breakpoints.md}) {
-    flex-direction: row;
-  }
-`;
-
-FlexContent.propTypes = {
-  noColumn: PropTypes.bool,
-};
-
-const Delight = styled.span`
-  font-weight: bold;
-  font-style: italic;
-`;
-
-const NoBreak = styled.span`
-  white-space: nowrap;
 `;
 
 const SocialItem = styled.li`
@@ -96,20 +94,26 @@ const SocialItem = styled.li`
   }
 `;
 
-const Hero = styled.div`
-  @media (min-width: ${breakpoints.sm}) {
-    text-align: center;
-  }
+const StyledHeart = styled(Heart)`
+  width: 24px;
+  margin-top: ${padding.xs};
 `;
 
 const IndexPage = () => (
   <Layout>
     <SEO />
     <Section>
-      <FlexContent>
+      <FlexContent center>
+        <LeftContent>
+          <ImageMeWrapper>
+            <ImageMe />
+          </ImageMeWrapper>
+        </LeftContent>
         <Hero>
           <h1>
-            Hey, <NoBreak>I&rsquo;m Cade</NoBreak>
+            Hey,
+            <br />
+            <NoBreak>I&rsquo;m Cade</NoBreak>
           </h1>
           <span>
             I write <Delight>superb</Delight> software&mdash;some of which{' '}
@@ -153,20 +157,15 @@ const IndexPage = () => (
     <Section>
       <FlexContent>
         <LeftContent as="h2">Profile</LeftContent>
-        <div>
-          <p>
-            I spend most days working on next-gen{' '}
-            <a href="https://spraoi.ai">insurance technology</a>, but
-            occasionally I&rsquo;ll take pictures of my{' '}
-            <a href="https://unsplash.com/photos/zaOIgXEi45g">
-              neighbor&rsquo;s cat
-            </a>
-            .
-          </p>
-          <ImageMeWrapper>
-            <ImageMe />
-          </ImageMeWrapper>
-        </div>
+        <p>
+          I spend most days working on next-gen{' '}
+          <a href="https://spraoi.ai">insurance technology</a>, but occasionally
+          I&rsquo;ll take pictures of my{' '}
+          <a href="https://unsplash.com/photos/zaOIgXEi45g">
+            neighbor&rsquo;s cat
+          </a>
+          .
+        </p>
       </FlexContent>
     </Section>
     <Section tertiary>

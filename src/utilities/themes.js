@@ -1,8 +1,7 @@
 import { darken, invert, lighten, transparentize } from 'polished';
 
-const black = '#000';
-const blackTransparent = transparentize(0.1, black);
 const offBlack = '#24252a';
+const offBlackTransparent = transparentize(0.1, offBlack);
 const offBlackDark = darken(0.025, offBlack);
 const orange = '#FFC371';
 const orangeInvert = lighten(0.3, invert(orange));
@@ -10,9 +9,9 @@ const orangeInvertLight = lighten(0.1, orangeInvert);
 const pink = '#FF5F6D';
 const pinkInvert = lighten(0.3, invert(pink));
 const pinkInvertLight = lighten(0.1, pinkInvert);
-const white = '#fff';
-const whiteTransparent = transparentize(0.1, white);
-const whiteDark = darken(0.025, white);
+const offWhite = '#fefefe';
+const whiteTransparent = transparentize(0.1, offWhite);
+const whiteDark = darken(0.025, offWhite);
 
 export default {
   dark: {
@@ -22,15 +21,15 @@ export default {
     backgroundSecondary: `linear-gradient(to right, ${pink}, ${orange})`,
     backgroundTertiary: offBlack,
     textBodyPrimary: whiteTransparent,
-    textHeaderPrimary: white,
+    textHeaderPrimary: offWhite,
   },
   light: {
     accentPrimary: pinkInvert,
     accentSecondary: orangeInvert,
-    backgroundPrimary: white,
+    backgroundPrimary: offWhite,
     backgroundSecondary: `linear-gradient(to right, ${pinkInvertLight}, ${orangeInvertLight})`,
     backgroundTertiary: whiteDark,
-    textBodyPrimary: blackTransparent,
-    textHeaderPrimary: black,
+    textBodyPrimary: offBlackTransparent,
+    textHeaderPrimary: offBlack,
   },
 };

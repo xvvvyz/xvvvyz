@@ -15,7 +15,9 @@ const ImageMe = () => (
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => (
+      <Img alt="" fluid={data.placeholderImage.childImageSharp.fluid} />
+    )}
   />
 );
 
