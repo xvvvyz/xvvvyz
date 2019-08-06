@@ -16,7 +16,7 @@ const FlexContent = styled(Content)`
   display: flex;
   flex-direction: ${p => (p.noColumn ? 'row' : 'column')};
 
-  @media (min-width: ${breakpoints.md}) {
+  @media (min-width: ${breakpoints.sm}) {
     flex-direction: row;
     justify-content: center;
     align-items: ${p => (p.center ? 'center' : 'flex-start')};
@@ -33,11 +33,15 @@ const LeftContent = styled.div`
   width: 100%;
   padding-right: ${padding.md};
 
-  @media (min-width: ${breakpoints.md}) {
+  @media (min-width: ${breakpoints.sm}) {
     order: initial;
     flex-shrink: 0;
-    width: 12rem;
+    width: 10rem;
     text-align: right;
+  }
+
+  @media (min-width: ${breakpoints.md}) {
+    width: 12rem;
   }
 `;
 
@@ -57,7 +61,7 @@ const NoBreak = styled.span`
 const ImageMeWrapper = styled('div')`
   position: relative;
   width: 100%;
-  max-width: 10rem;
+  max-width: 7rem;
   border-radius: 10px;
   overflow: hidden;
 
@@ -71,12 +75,16 @@ const ImageMeWrapper = styled('div')`
     background: ${p => p.theme.backgroundSecondary};
     opacity: 0.1;
   }
+
+  @media (min-width: ${breakpoints.sm}) {
+    max-width: none;
+  }
 `;
 
 const Hero = styled.div`
   padding-top: ${padding.sm};
 
-  @media (min-width: ${breakpoints.md}) {
+  @media (min-width: ${breakpoints.sm}) {
     padding-top: 0;
   }
 `;
