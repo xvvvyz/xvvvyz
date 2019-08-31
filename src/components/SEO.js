@@ -2,7 +2,6 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import Me from '../images/me.jpg';
 
 const SEO = ({ description, lang, meta, path, title }) => (
   <StaticQuery
@@ -46,7 +45,6 @@ const SEO = ({ description, lang, meta, path, title }) => (
               email: 'me@cadejs.com',
               familyName: 'Scroggins',
               givenName: 'Cade',
-              image: `${siteMetadata.siteUrl}${Me}`,
               jobTitle: 'Software Engineering Lead',
               mainEntityOfPage: siteMetadata.siteUrl,
               name: 'Cade Scroggins',

@@ -1,9 +1,11 @@
-import styled from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import { transitionSpeed } from '../utilities/animations';
 
-const ContentWrapper = styled('div')`
-  color: ${p => p.theme.textBodyPrimary};
-  background: ${p => p.theme.backgroundPrimary};
+const GlobalStyle = createGlobalStyle`
+  body {
+    color: ${p => p.theme.textBodyPrimary};
+    background: ${p => p.theme.backgroundPrimary};
+  }
 
   h1,
   h2,
@@ -30,8 +32,9 @@ const ContentWrapper = styled('div')`
   }
 
   li {
+    margin: 0;
     list-style: none;
   }
 `;
 
-export default ContentWrapper;
+export default GlobalStyle;
