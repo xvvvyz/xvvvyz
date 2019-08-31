@@ -9,7 +9,6 @@ import padding from '../utilities/padding';
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 100vw;
   height: 100vh;
   max-width: ${breakpoints.md};
@@ -20,20 +19,18 @@ const Wrapper = styled.section`
     justify-content: center;
     align-items: center;
   }
-
-  @media (min-width: ${breakpoints.lg}) {
-    padding-left: ${padding.md};
-  }
 `;
 
 const List = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: ${padding.xs};
 
   @media (min-width: ${breakpoints.md}) {
     flex-direction: row;
     justify-content: flex-start;
+    padding: 0;
   }
 `;
 
