@@ -42,7 +42,7 @@ const SEO = ({ description, lang, meta, path, title }) => (
               '@context': 'http://schema.org/',
               '@type': 'Person',
               description: siteMetadata.description,
-              email: 'me@cadejs.com',
+              email: 'email@cade.me',
               familyName: 'Scroggins',
               givenName: 'Cade',
               jobTitle: 'Software Engineering Lead',

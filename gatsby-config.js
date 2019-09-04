@@ -30,7 +30,7 @@ module.exports = {
     author: '@cadejscroggins',
     description:
       'Cade Scroggins is a software developer & designer from the Pacific Northwest. ✌️',
-    siteUrl: 'https://cadejs.com',
+    siteUrl: 'https://cade.me',
     title: 'Cade Scroggins',
   },
 };
