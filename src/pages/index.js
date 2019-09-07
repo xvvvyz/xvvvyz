@@ -54,10 +54,11 @@ const IndexPage = () => (
     <SEO />
     <Wrapper>
       <p>
-        Hey, I&rsquo;m Cade. I write superb software. The generous folks at{' '}
-        <a href="https://spraoi.ai">Spraoi</a> currently pay me to do so. In
-        addition to coercing computers, you might find me taking advantage of
-        the Pacific Northwest or meandering around with a&nbsp;camera.
+        Hey, I&rsquo;m Cade. I build <i>superb</i> digital products. These days,
+        most of my time is spent making insurance fun at{' '}
+        <a href="https://spraoi.ai">Spraoi</a>, but I still don&rsquo;t know
+        what I want to be when I grow up. Follow me on the socials for sparse
+        updates.
       </p>
       <List>
         <li>
