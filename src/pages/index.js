@@ -11,7 +11,7 @@ const Wrapper = styled.section`
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-  max-width: ${breakpoints.md};
+  max-width: ${breakpoints.lg};
   margin: 0 auto;
   padding: ${padding.xs};
 
@@ -49,16 +49,20 @@ const Link = styled.a`
   }
 `;
 
+const Superb = styled.span`
+  font-weight: bold;
+  font-style: italic;
+`;
+
 const IndexPage = () => (
   <Layout>
     <SEO />
     <Wrapper>
       <p>
-        Hey, I&rsquo;m Cade. I build <i>superb</i> digital products. These days,
-        most of my time is spent making insurance fun at{' '}
-        <a href="https://spraoi.ai">Spraoi</a>, but I still don&rsquo;t know
-        what I want to be when I grow up. Follow me on the socials for sparse
-        updates.
+        Hey, I&rsquo;m Cade. I build <Superb>superb</Superb> digital products. I
+        currently work at <a href="https://spraoi.ai">Spraoi</a>
+        &mdash;we are attempting to make insurance fun. I still don&rsquo;t know
+        what I want to be when I&nbsp;grow&nbsp;up.
       </p>
       <List>
         <li>
