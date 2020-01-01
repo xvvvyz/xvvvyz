@@ -147,7 +147,7 @@ IndexPage.propTypes = {
   data: PropTypes.shape({
     file: PropTypes.shape({
       childImageSharp: PropTypes.shape({
-        fixed: PropTypes.string,
+        fixed: PropTypes.shape({}),
       }),
     }),
   }).isRequired,
@@ -158,7 +158,7 @@ export const query = graphql`
     file(relativePath: { eq: "selfie.jpg" }) {
       childImageSharp {
         fixed(width: 175, height: 175) {
-          ...GatsbyImageSharpFixed_withWebp
+          ...GatsbyImageSharpFixed_withWebp_noBase64
         }
       }
     }
