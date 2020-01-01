@@ -14,7 +14,7 @@ const Wrapper = styled.section`
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-  max-width: ${breakpoints.xl};
+  max-width: ${breakpoints.lg};
   margin: 0 auto;
   padding: ${padding.xs};
 
@@ -28,6 +28,7 @@ const Content = styled.div`
   margin-bottom: ${padding.xs};
 
   @media (min-width: ${breakpoints.md}) {
+    margin-bottom: 0;
     text-align: center;
   }
 
@@ -41,7 +42,7 @@ const Content = styled.div`
 const Selfie = styled(Img)`
   flex-shrink: 0;
   margin-bottom: ${padding.xxs};
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: rgba(14, 14, 33, 0.1) 0px 22px 44px 0px;
 
   @media (min-width: ${breakpoints.md}) {
@@ -56,19 +57,17 @@ const Selfie = styled(Img)`
 
 const Bio = styled.p`
   margin-bottom: ${padding.xxs};
-
-  @media (min-width: ${breakpoints.lg}) {
-    margin-bottom: ${padding.xxs};
-  }
 `;
 
 const List = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: ${padding.xs};
 
   @media (min-width: ${breakpoints.md}) {
     flex-direction: row;
+    padding-bottom: 0;
   }
 
   @media (min-width: ${breakpoints.lg}) {
@@ -80,6 +79,13 @@ const Link = styled.a`
   display: flex;
   align-items: center;
   padding: ${padding.xxxs} 0;
+  color: ${p => p.theme.accentSecondary};
+  text-decoration: none;
+
+  &:hover {
+    color: ${p => p.theme.textBodyPrimary};
+    text-decoration: underline;
+  }
 
   span {
     margin-top: 0.2em;
@@ -87,12 +93,12 @@ const Link = styled.a`
   }
 
   @media (min-width: ${breakpoints.md}) {
-    margin: 0 ${padding.xs};
+    margin: 0 ${padding.xxs};
   }
 
   @media (min-width: ${breakpoints.lg}) {
     padding: 0;
-    margin: 0 ${padding.md} 0 0;
+    margin: 0 ${padding.sm} 0 0;
   }
 `;
 
@@ -105,11 +111,18 @@ const IndexPage = ({ data }) => (
         <div>
           <Bio>
             Hey, I&rsquo;m <b>Cade Scroggins</b>. I build superb digital
-            products. I&rsquo;ve been working at&nbsp;
-            <a href="https://spraoi.ai">Spraoi</a>{' '}
-            since&nbsp;2017&mdash;attempting to make insurance fun. On the side,
-            you might find me hand-crafting skis with my dad, drumming to
-            blink-182 or reading&nbsp;non&#8209;fiction.
+            products at <a href="https://spraoi.ai">Spraoi</a>&mdash;we are
+            attempting to make insurance fun. Outside of work, you might find me{' '}
+            hand&#x2011;crafting <a href="https://541.ski">skis</a>, drumming to{' '}
+            lo&#x2011;fi electronic{' '}
+            <a href="https://open.spotify.com/playlist/0pUOS8evkoHDkWy26F6EhF">
+              music
+            </a>{' '}
+            or falling asleep to&nbsp;an&nbsp;
+            <a href="https://www.audible.com/pd/The-Daily-Stoic-Audiobook/B01M4IDLAG">
+              audiobook
+            </a>
+            .
           </Bio>
           <List>
             <li>

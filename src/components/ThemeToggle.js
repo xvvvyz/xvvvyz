@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import breakpoints from '../utilities/breakpoints';
 import padding from '../utilities/padding';
 import { transitionSpeed } from '../utilities/animations';
 
 const ThemeToggle = styled.button`
-  position: fixed;
+  position: absolute;
+  top: 0;
   right: 0;
-  bottom: 0;
   padding: ${padding.xs};
   border: none;
   background-color: transparent;
@@ -22,11 +21,6 @@ const ThemeToggle = styled.button`
 
   &:focus {
     outline: none;
-  }
-
-  @media (min-width: ${breakpoints.md}) {
-    top: 0;
-    bottom: auto;
   }
 `;
 

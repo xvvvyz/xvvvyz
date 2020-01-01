@@ -4,7 +4,6 @@ import { transitionSpeed } from '../utilities/animations';
 const GlobalStyle = createGlobalStyle`
   body {
     color: ${p => p.theme.textBodyPrimary};
-    background: ${p => p.theme.backgroundPrimary};
   }
 
   h1,
@@ -17,13 +16,8 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     transition: color ${transitionSpeed};
-    color: ${p => p.theme.accentSecondary};
-    text-decoration: none;
-
-    &:hover {
-      color: ${p => p.theme.textBodyPrimary};
-      text-decoration: underline;
-    }
+    color: ${p => p.theme.textBodyPrimary};
+    text-decoration: underline;
   }
 
   ul {
