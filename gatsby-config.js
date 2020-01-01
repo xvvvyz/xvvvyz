@@ -18,6 +18,10 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
     },
     {
+      options: { fonts: [{ family: 'Nunito', variants: ['400', '700'] }] },
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+    },
+    {
       options: { pathToConfigModule: 'src/utilities/typography.js' },
       resolve: 'gatsby-plugin-typography',
     },

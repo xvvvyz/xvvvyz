@@ -8,6 +8,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import breakpoints from '../utilities/breakpoints';
 import padding from '../utilities/padding';
+import { rhythm } from '../utilities/typography';
 
 const Wrapper = styled.section`
   display: flex;
@@ -55,9 +56,41 @@ const Selfie = styled(Img)`
   }
 `;
 
-const Bio = styled.p`
+const BioStyled = styled.p`
   margin-bottom: ${padding.xxs};
+
+  a {
+    position: relative;
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      bottom: 0.3em;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      border-radius: 1px;
+      background-color: ${p => p.theme.light.textBodyPrimary};
+    }
+  }
 `;
+
+const BioGlobal = createGlobalStyle`
+  body.dark .${BioStyled.styledComponentId} {
+    a {
+      &::after {
+        background-color: ${p => p.theme.dark.textBodyPrimary};
+      }
+    }
+  }
+`;
+
+const Bio = props => (
+  <>
+    <BioGlobal />
+    <BioStyled {...props} />
+  </>
+);
 
 const List = styled.ul`
   display: flex;
@@ -80,15 +113,17 @@ const LinkStyled = styled.a`
   align-items: center;
   padding: ${padding.xxxs} 0;
   color: ${p => p.theme.light.accentSecondary};
+  font-size: ${rhythm(0.41)};
+  font-weight: bold;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
 
   &:hover {
     color: ${p => p.theme.light.textBodyPrimary};
-    text-decoration: underline;
   }
 
   span {
-    margin-top: 0.2em;
     margin-left: ${padding.xxxs};
   }
 
@@ -144,25 +179,25 @@ const IndexPage = ({ data }) => (
           <List>
             <li>
               <Link href="https://github.com/cadejscroggins">
-                <GitHub />
+                <GitHub width={20} />
                 <span>GitHub</span>
               </Link>
             </li>
             <li>
               <Link href="https://www.linkedin.com/in/cadejscroggins">
-                <Linkedin />
+                <Linkedin width={20} />
                 <span>LinkedIn</span>
               </Link>
             </li>
             <li>
               <Link href="https://www.instagram.com/cadejscroggins">
-                <Instagram />
+                <Instagram width={20} />
                 <span>Instagram</span>
               </Link>
             </li>
             <li>
               <Link href="https://twitter.com/cadejscroggins">
-                <Twitter />
+                <Twitter width={20} />
                 <span>Twitter</span>
               </Link>
             </li>

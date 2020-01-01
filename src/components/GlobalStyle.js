@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   a {
     transition: color ${transitionSpeed};
     color: ${p => p.theme.light.textBodyPrimary};
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   body.dark a {

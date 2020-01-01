@@ -2,7 +2,7 @@ import { darken, invert, lighten, transparentize } from 'polished';
 
 const offBlack = '#24252a';
 const offBlackTransparent = transparentize(0.1, offBlack);
-const offBlackDark = darken(0.025, offBlack);
+const offBlackDark = darken(0.05, offBlack);
 const orange = '#FFC371';
 const orangeInvert = lighten(0.3, invert(orange));
 const orangeInvertLight = lighten(0.1, orangeInvert);
