@@ -1,31 +1,32 @@
 import PropTypes from 'prop-types';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Moon, Sun } from 'react-feather';
-import { ThemeContext } from 'styled-components';
-import { ThemeManagerContext } from 'gatsby-styled-components-dark-mode';
+import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './GlobalStyle';
 import ThemeToggle from './ThemeToggle';
+import theme from '../utilities/theme';
 
 const Layout = ({ children }) => {
-  const { isDark, toggleDark } = useContext(ThemeManagerContext);
-  const { backgroundPrimary, textBodyPrimary } = useContext(ThemeContext);
-  const [hasUpdated, setHasUpdated] = useState(false);
+  const [dark, setDark] = useState(null);
+  useEffect(() => setDark(document.body.classList.contains('dark')), []);
 
-  useEffect(() => {
-    if (hasUpdated) document.body.style.background = backgroundPrimary;
-    if (hasUpdated) document.body.style.color = textBodyPrimary;
-    else setHasUpdated(true);
-  }, [backgroundPrimary]);
+  const onDarkToggle = () => {
+    localStorage.setItem('dark', JSON.stringify(!dark));
+    document.body.classList[dark ? 'remove' : 'add']('dark');
+    setDark(!dark);
+  };
 
   return (
     <>
-      <GlobalStyle />
-      {hasUpdated && (
-        <ThemeToggle onClick={toggleDark}>
-          {isDark ? <Sun /> : <Moon />}
-        </ThemeToggle>
-      )}
-      {children}
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        {dark !== null && (
+          <ThemeToggle onClick={onDarkToggle}>
+            {dark ? <Sun /> : <Moon />}
+          </ThemeToggle>
+        )}
+        {children}
+      </ThemeProvider>
     </>
   );
 };

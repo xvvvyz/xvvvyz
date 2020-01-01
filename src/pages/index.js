@@ -1,7 +1,7 @@
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { GitHub, Instagram, Linkedin, Twitter } from 'react-feather';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
@@ -75,15 +75,15 @@ const List = styled.ul`
   }
 `;
 
-const Link = styled.a`
+const LinkStyled = styled.a`
   display: flex;
   align-items: center;
   padding: ${padding.xxxs} 0;
-  color: ${p => p.theme.accentSecondary};
+  color: ${p => p.theme.light.accentSecondary};
   text-decoration: none;
 
   &:hover {
-    color: ${p => p.theme.textBodyPrimary};
+    color: ${p => p.theme.light.textBodyPrimary};
     text-decoration: underline;
   }
 
@@ -101,6 +101,23 @@ const Link = styled.a`
     margin: 0 ${padding.sm} 0 0;
   }
 `;
+
+const LinkGlobal = createGlobalStyle`
+  body.dark .${LinkStyled.styledComponentId} {
+    color: ${p => p.theme.dark.accentSecondary};
+
+    &:hover {
+      color: ${p => p.theme.dark.textBodyPrimary};
+    }
+  }
+`;
+
+const Link = props => (
+  <>
+    <LinkGlobal />
+    <LinkStyled {...props} />
+  </>
+);
 
 const IndexPage = ({ data }) => (
   <Layout>

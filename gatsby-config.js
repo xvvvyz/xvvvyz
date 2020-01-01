@@ -1,5 +1,3 @@
-const themes = require('./themes.js');
-
 module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -26,10 +24,6 @@ module.exports = {
     {
       options: { name: 'images', path: 'src/images' },
       resolve: 'gatsby-source-filesystem',
-    },
-    {
-      options: { dark: themes.dark, light: themes.light },
-      resolve: 'gatsby-styled-components-dark-mode',
     },
   ],
   siteMetadata: {

@@ -1,4 +1,4 @@
-const { darken, invert, lighten, transparentize } = require('polished');
+import { darken, invert, lighten, transparentize } from 'polished';
 
 const offBlack = '#24252a';
 const offBlackTransparent = transparentize(0.1, offBlack);
@@ -13,7 +13,7 @@ const offWhite = '#fefefe';
 const whiteTransparent = transparentize(0.1, offWhite);
 const whiteDark = darken(0.025, offWhite);
 
-module.exports = {
+export default {
   dark: {
     accentPrimary: pink,
     accentSecondary: orange,
