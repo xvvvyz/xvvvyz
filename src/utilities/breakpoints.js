@@ -3,7 +3,7 @@
 export default {
   xs: '400px',
   sm: '576px',
-  md: '820px',
-  lg: '1000px',
+  md: '900px',
+  lg: '1100px',
   xl: '1200px',
 };
