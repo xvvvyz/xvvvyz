@@ -8,20 +8,23 @@ import ThemeToggle from './ThemeToggle';
 
 const Layout = ({ children }) => {
   const { isDark, toggleDark } = useContext(ThemeManagerContext);
-  const { backgroundPrimary } = useContext(ThemeContext);
+  const { backgroundPrimary, textBodyPrimary } = useContext(ThemeContext);
   const [hasUpdated, setHasUpdated] = useState(false);
 
   useEffect(() => {
     if (hasUpdated) document.body.style.background = backgroundPrimary;
+    if (hasUpdated) document.body.style.color = textBodyPrimary;
     else setHasUpdated(true);
   }, [backgroundPrimary]);
 
   return (
     <>
       <GlobalStyle />
-      <ThemeToggle onClick={toggleDark}>
-        {isDark ? <Sun /> : <Moon />}
-      </ThemeToggle>
+      {hasUpdated && (
+        <ThemeToggle onClick={toggleDark}>
+          {isDark ? <Sun /> : <Moon />}
+        </ThemeToggle>
+      )}
       {children}
     </>
   );

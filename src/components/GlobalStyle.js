@@ -1,21 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
-import { transitionSpeed } from '../utilities/animations';
 
 const GlobalStyle = createGlobalStyle`
-  body {
-    color: ${p => p.theme.textBodyPrimary};
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
   b {
     color: ${p => p.theme.textHeaderPrimary};
   }
 
   a {
-    transition: color ${transitionSpeed};
     color: ${p => p.theme.textBodyPrimary};
     text-decoration: underline;
   }

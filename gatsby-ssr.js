@@ -9,6 +9,10 @@ const generateNoFlashScript = ({ storageKey }) => `
       document.body.style.background = darkMode
         ? '${themes.dark.backgroundPrimary}'
         : '${themes.light.backgroundPrimary}';
+
+      document.body.style.color = darkMode
+        ? '${themes.dark.textBodyPrimary}'
+        : '${themes.light.textBodyPrimary}';
     }
 
     var preferDarkQuery = '(prefers-color-scheme: dark)';
