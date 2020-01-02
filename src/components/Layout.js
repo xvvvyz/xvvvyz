@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
         <GlobalStyle />
         {dark !== null && (
           <ThemeToggle onClick={onDarkToggle}>
-            {dark ? <Sun /> : <Moon />}
+            {dark ? <Moon /> : <Sun />}
           </ThemeToggle>
         )}
         {children}
