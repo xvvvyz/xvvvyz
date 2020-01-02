@@ -156,7 +156,7 @@ const Link = props => (
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO />
+    <SEO title="Cade Scroggins — Software Engineer & Designer" />
     <Wrapper>
       <Content>
         <Selfie fixed={data.file.childImageSharp.fixed} />

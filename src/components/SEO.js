@@ -34,7 +34,9 @@ const SEO = ({ description, lang, meta, path, title }) => (
             { content: title || siteMetadata.title, property: 'og:title' },
           ].concat(meta)}
           title={title || siteMetadata.title}
-          titleTemplate={title ? `%s | ${siteMetadata.title}` : '%s'}
+          titleTemplate={
+            title && path !== '/' ? `%s | ${siteMetadata.title}` : '%s'
+          }
         >
           <link href={`${siteMetadata.siteUrl}${path}`} rel="canonical" />
           <script type="application/ld+json">
