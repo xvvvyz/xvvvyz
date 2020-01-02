@@ -10,7 +10,7 @@ import breakpoints from '../utilities/breakpoints';
 import padding from '../utilities/padding';
 import { rhythm } from '../utilities/typography';
 
-const Wrapper = styled.section`
+const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -159,7 +159,7 @@ const IndexPage = ({ data }) => (
     <SEO title="Cade Scroggins — Software Engineer & Designer" />
     <Wrapper>
       <Content>
-        <Selfie fixed={data.file.childImageSharp.fixed} />
+        <Selfie alt="Cade Scroggins" fixed={data.file.childImageSharp.fixed} />
         <div>
           <Bio>
             Hey, I&rsquo;m <b>Cade Scroggins</b>. I build superb digital
