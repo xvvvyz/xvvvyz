@@ -43,7 +43,7 @@ const Content = styled.div`
 const Selfie = styled(Img)`
   flex-shrink: 0;
   margin-bottom: ${padding.xxs};
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: rgba(14, 14, 33, 0.1) 0px 22px 44px 0px;
 
   @media (min-width: ${breakpoints.md}) {
@@ -222,7 +222,7 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "selfie.jpg" }) {
       childImageSharp {
-        fixed(width: 175, height: 175) {
+        fixed(width: 150, height: 150) {
           ...GatsbyImageSharpFixed_withWebp_noBase64
         }
       }
