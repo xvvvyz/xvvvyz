@@ -33,7 +33,7 @@ module.exports = {
   siteMetadata: {
     author: '@cadejscroggins',
     description:
-      'Cade Scroggins is a Software Engineer with a knack for creating delightful user experiences.',
+      'Cade Scroggins is a software engineer with a knack for creating delightful user experiences.',
     siteUrl: 'https://cade.me',
     title: 'Cade Scroggins',
   },
