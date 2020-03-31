@@ -70,7 +70,7 @@ const BioStyled = styled.p`
       width: 100%;
       height: 1px;
       border-radius: 1px;
-      background-color: ${p => p.theme.light.textBodyPrimary};
+      background-color: ${(p) => p.theme.light.textBodyPrimary};
     }
   }
 `;
@@ -79,13 +79,13 @@ const BioGlobal = createGlobalStyle`
   body.dark .${BioStyled.styledComponentId} {
     a {
       &::after {
-        background-color: ${p => p.theme.dark.textBodyPrimary};
+        background-color: ${(p) => p.theme.dark.textBodyPrimary};
       }
     }
   }
 `;
 
-const Bio = props => (
+const Bio = (props) => (
   <>
     <BioGlobal />
     <BioStyled {...props} />
@@ -112,7 +112,7 @@ const LinkStyled = styled.a`
   display: flex;
   align-items: center;
   padding: ${padding.xxxs} 0;
-  color: ${p => p.theme.light.accentSecondary};
+  color: ${(p) => p.theme.light.accentSecondary};
   font-size: ${rhythm(0.41)};
   font-weight: bold;
   text-decoration: none;
@@ -120,7 +120,7 @@ const LinkStyled = styled.a`
   letter-spacing: 0.14em;
 
   &:hover {
-    color: ${p => p.theme.light.textBodyPrimary};
+    color: ${(p) => p.theme.light.textBodyPrimary};
   }
 
   span {
@@ -139,15 +139,15 @@ const LinkStyled = styled.a`
 
 const LinkGlobal = createGlobalStyle`
   body.dark .${LinkStyled.styledComponentId} {
-    color: ${p => p.theme.dark.accentSecondary};
+    color: ${(p) => p.theme.dark.accentSecondary};
 
     &:hover {
-      color: ${p => p.theme.dark.textBodyPrimary};
+      color: ${(p) => p.theme.dark.textBodyPrimary};
     }
   }
 `;
 
-const Link = props => (
+const Link = (props) => (
   <>
     <LinkGlobal />
     <LinkStyled {...props} />
