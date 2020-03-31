@@ -13,11 +13,11 @@ const ThemeToggleStyled = styled.button`
   transition: color ${transitionSpeed}, border-bottom-color ${transitionSpeed};
   z-index: 1;
   font: inherit;
-  color: ${p => p.theme.light.accentSecondary};
+  color: ${(p) => p.theme.light.accentSecondary};
   cursor: pointer;
 
   &:hover {
-    color: ${p => p.theme.light.textBodyPrimary};
+    color: ${(p) => p.theme.light.textBodyPrimary};
   }
 
   &:focus {
@@ -27,15 +27,15 @@ const ThemeToggleStyled = styled.button`
 
 const ThemeToggleGlobal = createGlobalStyle`
   body.dark .${ThemeToggleStyled.styledComponentId} {
-    color: ${p => p.theme.dark.accentSecondary};
+    color: ${(p) => p.theme.dark.accentSecondary};
 
     &:hover {
-      color: ${p => p.theme.dark.textBodyPrimary};
+      color: ${(p) => p.theme.dark.textBodyPrimary};
     }
   }
 `;
 
-const ThemeToggle = props => (
+const ThemeToggle = (props) => (
   <>
     <ThemeToggleGlobal />
     <ThemeToggleStyled {...props} />

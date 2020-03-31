@@ -70,7 +70,7 @@ const BioStyled = styled.p`
       width: 100%;
       height: 1px;
       border-radius: 1px;
-      background-color: ${p => p.theme.light.textBodyPrimary};
+      background-color: ${(p) => p.theme.light.textBodyPrimary};
     }
   }
 `;
@@ -79,13 +79,13 @@ const BioGlobal = createGlobalStyle`
   body.dark .${BioStyled.styledComponentId} {
     a {
       &::after {
-        background-color: ${p => p.theme.dark.textBodyPrimary};
+        background-color: ${(p) => p.theme.dark.textBodyPrimary};
       }
     }
   }
 `;
 
-const Bio = props => (
+const Bio = (props) => (
   <>
     <BioGlobal />
     <BioStyled {...props} />
@@ -111,8 +111,8 @@ const List = styled.ul`
 const LinkStyled = styled.a`
   display: flex;
   align-items: center;
-  padding: ${padding.xxxs} 0;
-  color: ${p => p.theme.light.accentSecondary};
+  padding: ${padding.xxs} 0;
+  color: ${(p) => p.theme.light.accentSecondary};
   font-size: ${rhythm(0.41)};
   font-weight: bold;
   text-decoration: none;
@@ -120,7 +120,7 @@ const LinkStyled = styled.a`
   letter-spacing: 0.14em;
 
   &:hover {
-    color: ${p => p.theme.light.textBodyPrimary};
+    color: ${(p) => p.theme.light.textBodyPrimary};
   }
 
   span {
@@ -139,15 +139,15 @@ const LinkStyled = styled.a`
 
 const LinkGlobal = createGlobalStyle`
   body.dark .${LinkStyled.styledComponentId} {
-    color: ${p => p.theme.dark.accentSecondary};
+    color: ${(p) => p.theme.dark.accentSecondary};
 
     &:hover {
-      color: ${p => p.theme.dark.textBodyPrimary};
+      color: ${(p) => p.theme.dark.textBodyPrimary};
     }
   }
 `;
 
-const Link = props => (
+const Link = (props) => (
   <>
     <LinkGlobal />
     <LinkStyled {...props} />
@@ -162,19 +162,8 @@ const IndexPage = ({ data }) => (
         <Selfie alt="Cade Scroggins" fixed={data.file.childImageSharp.fixed} />
         <div>
           <Bio>
-            Hey, I&rsquo;m <b>Cade Scroggins</b>. I build superb digital
-            products at <a href="https://spraoi.ai">Spraoi</a>&mdash;we are
-            attempting to make insurance fun. Outside of work, you might find me{' '}
-            hand&#x2011;crafting <a href="https://541.ski">skis</a>, drumming to{' '}
-            lo&#x2011;fi electronic{' '}
-            <a href="https://open.spotify.com/playlist/0pUOS8evkoHDkWy26F6EhF">
-              music
-            </a>{' '}
-            or falling asleep to&nbsp;an&nbsp;
-            <a href="https://www.audible.com/pd/The-Daily-Stoic-Audiobook/B01M4IDLAG">
-              audiobook
-            </a>
-            .
+            Hey, I&rsquo;m <b>Cade Scroggins</b>. You can find me on the
+            internet below.
           </Bio>
           <List>
             <li>
@@ -222,7 +211,7 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "selfie.jpg" }) {
       childImageSharp {
-        fixed(width: 150, height: 150) {
+        fixed(width: 125, height: 125) {
           ...GatsbyImageSharpFixed_withWebp_noBase64
         }
       }
