@@ -1,7 +1,14 @@
 module.exports = {
+  flags: {
+    DEV_WEBPACK_CACHE: false,
+    FAST_DEV: false,
+    LMDB_STORE: false,
+    PARALLEL_SOURCING: false,
+    PRESERVE_FILE_DOWNLOAD_CACHE: false,
+  },
   plugins: [
+    'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-react-svg',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-styled-components',
@@ -18,8 +25,12 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
     },
     {
-      options: { fonts: [{ family: 'Nunito', variants: ['400', '700'] }] },
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: { fonts: ['Nunito:400'] },
+      resolve: 'gatsby-plugin-google-fonts',
+    },
+    {
+      options: { rule: { include: /images/ } },
+      resolve: 'gatsby-plugin-react-svg',
     },
     {
       options: { pathToConfigModule: 'src/utilities/typography.js' },

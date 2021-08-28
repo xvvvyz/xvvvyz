@@ -1,9 +1,8 @@
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-const SEO = ({ description, lang, meta, path, title }) => (
+const Seo = ({ description, lang, meta, path, title }) => (
   <StaticQuery
     query={graphql`
       query DefaultSEOQuery {
@@ -44,10 +43,10 @@ const SEO = ({ description, lang, meta, path, title }) => (
               '@context': 'http://schema.org/',
               '@type': 'Person',
               description: siteMetadata.description,
-              email: 'email@cade.me',
+              email: 'hello@cade.me',
               familyName: 'Scroggins',
               givenName: 'Cade',
-              jobTitle: 'Software Engineering Lead',
+              jobTitle: 'Software Engineer',
               mainEntityOfPage: siteMetadata.siteUrl,
               name: 'Cade Scroggins',
               sameAs: [
@@ -59,9 +58,9 @@ const SEO = ({ description, lang, meta, path, title }) => (
               worksFor: {
                 '@type': 'Organization',
                 description:
-                  'An insurtech solutions provider with a focus on machine learning.',
-                mainEntityOfPage: 'https://spraoi.ai',
-                name: 'Spraoi',
+                  'A simple gateway into the benefits of decentralized finance.',
+                mainEntityOfPage: 'https://beema.finance',
+                name: 'Beema Finance',
               },
             })}
           </script>
@@ -71,21 +70,7 @@ const SEO = ({ description, lang, meta, path, title }) => (
   />
 );
 
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(
-    PropTypes.shape({
-      content: PropTypes.string,
-      name: PropTypes.string,
-      property: PropTypes.string,
-    })
-  ),
-  path: PropTypes.string,
-  title: PropTypes.string,
-};
-
-SEO.defaultProps = {
+Seo.defaultProps = {
   description: null,
   lang: 'en',
   meta: [],
@@ -93,4 +78,4 @@ SEO.defaultProps = {
   title: null,
 };
 
-export default SEO;
+export default Seo;

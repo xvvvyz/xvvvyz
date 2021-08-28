@@ -1,8 +1,6 @@
-/* eslint-disable sort-keys */
-
 import { rhythm } from './typography';
 
-export default {
+const padding = {
   xxxs: rhythm(0.25),
   xxs: rhythm(0.5),
   xs: rhythm(0.75),
@@ -13,3 +11,5 @@ export default {
   xxl: rhythm(4),
   xxxl: rhythm(5),
 };
+
+export default padding;

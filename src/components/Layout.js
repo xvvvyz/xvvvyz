@@ -1,38 +1,13 @@
-import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
-import { Moon, Sun } from 'react-feather';
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './GlobalStyle';
-import ThemeToggle from './ThemeToggle';
 import theme from '../utilities/theme';
 
-const Layout = ({ children }) => {
-  const [dark, setDark] = useState(null);
-  useEffect(() => setDark(document.body.classList.contains('dark')), []);
-
-  const onDarkToggle = () => {
-    localStorage.setItem('dark', JSON.stringify(!dark));
-    document.body.classList[dark ? 'remove' : 'add']('dark');
-    setDark(!dark);
-  };
-
-  return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        {dark !== null && (
-          <ThemeToggle onClick={onDarkToggle}>
-            {dark ? <Moon /> : <Sun />}
-          </ThemeToggle>
-        )}
-        {children}
-      </ThemeProvider>
-    </>
-  );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+const Layout = ({ children }) => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    {children}
+  </ThemeProvider>
+);
 
 export default Layout;

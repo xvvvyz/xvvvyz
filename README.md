@@ -1,6 +1,6 @@
 # cade.me
 
-> It can be anything.
+> A website with my name on it.
 
 ## Development Setup
 
