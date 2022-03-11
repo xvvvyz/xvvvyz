@@ -1,4 +1,6 @@
-.cache
-/public
-node_modules
-yarn-error.log
+.next/
+build/
+coverage/
+next-env.d.ts
+node_modules/
+out/
