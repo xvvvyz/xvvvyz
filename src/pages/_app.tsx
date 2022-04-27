@@ -7,7 +7,7 @@ import type { AppProps } from 'next/app';
 const App = ({ Component, pageProps }: AppProps) => (
   <>
     <DefaultSeo
-      canonical="https://cade.me"
+      canonical="https://xvvvyz.xyz"
       defaultTitle="Cade Scroggins — Software engineer & designer"
       description="Foo bar baz."
       openGraph={{
@@ -16,11 +16,11 @@ const App = ({ Component, pageProps }: AppProps) => (
         site_name: 'Cade Scroggins',
         title: 'Cade Scroggins',
         type: 'website',
-        url: 'https://cade.me',
+        url: 'https://xvvvyz.xyz',
       }}
       titleTemplate="%s - Cade Scroggins"
       twitter={{
-        handle: '@cadejscroggins',
+        handle: '@xvvvyz',
       }}
     />
     <ChakraProvider

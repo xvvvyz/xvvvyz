@@ -1,14 +1,15 @@
 import * as C from '@chakra-ui/react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { FC } from 'react';
 
 const MotionBox = motion(C.Box);
 
 interface MotionLiProps {
+  children: React.ReactNode;
   delay: number;
 }
 
-const MotionListItem: FC<MotionLiProps> = ({ children, delay }) => (
+const MotionListItem = ({ children, delay }: MotionLiProps) => (
   <MotionBox
     animate={{
       opacity: 1,
