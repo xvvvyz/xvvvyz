@@ -43,7 +43,7 @@ const links: BigLinkProps[] = [
   },
   {
     bg: '#e3c4c8',
-    href: '/pgp.txt',
+    href: '/pk.asc',
     text: 'PGP Key',
   },
 ];
