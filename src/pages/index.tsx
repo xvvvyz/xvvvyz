@@ -38,7 +38,7 @@ const links: BigLinkProps[] = [
   },
   {
     bg: '#f3d0ca',
-    href: 'mailto:hi@cade.me',
+    href: 'mailto:hey@cade.me',
     text: 'Email',
   },
   {
