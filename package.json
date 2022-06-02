@@ -1,5 +1,5 @@
 {
-  "name": "cade.me",
+  "name": "xvvvyz",
   "private": true,
   "scripts": {
     "build": "next build && next export",
