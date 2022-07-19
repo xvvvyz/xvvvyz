@@ -3,7 +3,7 @@ import React from 'react';
 import { NextPage } from 'next';
 import BigLink from '../components/BigLink';
 import MotionBox, { MotionListItem } from '../components/MotionBox';
-import type { BigLinkProps } from '../components/BigLink';
+import { BigLinkProps } from '../components/BigLink';
 
 const links: BigLinkProps[] = [
   {
@@ -18,8 +18,8 @@ const links: BigLinkProps[] = [
   },
   {
     bg: '#d4f5eb',
-    href: 'https://dribbble.com/xvvvyz',
-    text: 'Dribbble',
+    href: 'https://unsplash.com/@xvvvyz',
+    text: 'Unsplash',
   },
   {
     bg: '#f6fcdc',
@@ -28,22 +28,12 @@ const links: BigLinkProps[] = [
   },
   {
     bg: '#ffedcd',
-    href: 'https://unsplash.com/@xvvvyz',
-    text: 'Unsplash',
-  },
-  {
-    bg: '#fbdbca',
-    href: 'https://www.tiktok.com/@xvvvyz',
-    text: 'TikTok',
-  },
-  {
-    bg: '#f3d0ca',
     href: 'mailto:xvvvyz@cade.me',
     text: 'Email',
   },
   {
-    bg: '#e3c4c8',
-    href: '/pk.asc',
+    bg: '#fbdbca',
+    href: 'https://github.com/xvvvyz.gpg',
     text: 'PGP Key',
   },
 ];
@@ -69,9 +59,9 @@ const LinksPage: NextPage = () => (
           There are many like them, but these are mine.
         </C.Text>
       </MotionBox>
-      <C.Grid gap={4} mt={7} templateColumns={{ lg: 'repeat(4, 1fr)' }}>
+      <C.Grid gap={4} mt={7} templateColumns={{ lg: 'repeat(3, 1fr)' }}>
         {links.map(({ bg, href, text }, i) => (
-          <MotionListItem key={text} delay={0.1 * i + 0.1}>
+          <MotionListItem delay={0.1 * i + 0.1} key={text}>
             <BigLink bg={bg} fg="bg" href={href} text={text} />
           </MotionListItem>
         ))}

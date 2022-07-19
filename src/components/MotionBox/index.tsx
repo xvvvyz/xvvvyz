@@ -14,12 +14,12 @@ const MotionListItem = ({ children, delay }: MotionLiProps) => (
     animate={{
       opacity: 1,
       rotate: '0deg',
-      x: 0,
-      y: 0,
       transition: {
         delay,
         type: 'tween',
       },
+      x: 0,
+      y: 0,
     }}
     initial={{
       opacity: 0,

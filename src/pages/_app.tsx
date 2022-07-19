@@ -1,24 +1,27 @@
 import '@fontsource/inter/400.css';
 import 'focus-visible/dist/focus-visible';
+import { AppProps } from 'next/app';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { DefaultSeo } from 'next-seo';
-import type { AppProps } from 'next/app';
+
+const description =
+  'Cade, aka xvvvyz (a rot21 on caaade), is a design-minded, full-stack software engineer building on the www. This site contains a few relevant hyperlinks.';
 
 const App = ({ Component, pageProps }: AppProps) => (
   <>
     <DefaultSeo
       canonical="https://xvvvyz.xyz"
-      defaultTitle="Cade Scroggins — Software engineer & designer"
-      description="Foo bar baz."
+      defaultTitle="Cade Scroggins — a few hyperlinks"
+      description={description}
       openGraph={{
-        description: 'Foo bar baz.',
+        description,
         locale: 'en_US',
         site_name: 'Cade Scroggins',
         title: 'Cade Scroggins',
         type: 'website',
         url: 'https://xvvvyz.xyz',
       }}
-      titleTemplate="%s - Cade Scroggins"
+      titleTemplate="%s • cade scroggins"
       twitter={{
         handle: '@xvvvyz',
       }}
