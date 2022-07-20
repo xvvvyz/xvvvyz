@@ -21,7 +21,6 @@ const App = ({ Component, pageProps }: AppProps) => (
         type: 'website',
         url: 'https://xvvvyz.xyz',
       }}
-      titleTemplate="%s • cade scroggins"
       twitter={{
         handle: '@xvvvyz',
       }}
