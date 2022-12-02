@@ -4,20 +4,19 @@ import { AppProps } from 'next/app';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { DefaultSeo } from 'next-seo';
 
-const description =
-  'Cade, aka xvvvyz (a rot21 on caaade), is a design-minded, full-stack software engineer building on the www. This site contains a few relevant hyperlinks.';
+const description = 'xvvvyz is a rot21 on caaade. cade is my name.';
 
 const App = ({ Component, pageProps }: AppProps) => (
   <>
     <DefaultSeo
       canonical="https://xvvvyz.xyz"
-      defaultTitle="Cade Scroggins — a few hyperlinks"
+      defaultTitle="xvvvyz — a few hyperlinks"
       description={description}
       openGraph={{
         description,
         locale: 'en_US',
-        site_name: 'Cade Scroggins',
-        title: 'Cade Scroggins',
+        site_name: 'xvvvyz',
+        title: 'xvvvyz',
         type: 'website',
         url: 'https://xvvvyz.xyz',
       }}
