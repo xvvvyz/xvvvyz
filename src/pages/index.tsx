@@ -2,19 +2,14 @@ import * as C from '@chakra-ui/react';
 import React from 'react';
 import { NextPage } from 'next';
 import BigLink from '../components/BigLink';
-import MotionBox, { MotionListItem } from '../components/MotionBox';
+import { MotionListItem } from '../components/MotionBox';
 import { BigLinkProps } from '../components/BigLink';
 
 const links: BigLinkProps[] = [
   {
-    bg: '#d7d8f9',
-    href: 'https://www.linkedin.com/in/cadescroggins/',
-    text: 'LinkedIn',
-  },
-  {
     bg: '#cfe5f8',
-    href: 'https://github.com/xvvvyz/',
-    text: 'GitHub',
+    href: 'https://twitter.com/xvvvyz',
+    text: 'Twitter',
   },
   {
     bg: '#d4f5eb',
@@ -23,8 +18,8 @@ const links: BigLinkProps[] = [
   },
   {
     bg: '#f6fcdc',
-    href: 'https://twitter.com/xvvvyz',
-    text: 'Twitter',
+    href: 'https://github.com/xvvvyz/',
+    text: 'GitHub',
   },
   {
     bg: '#ffedcd',
@@ -38,28 +33,10 @@ const links: BigLinkProps[] = [
   },
 ];
 
-const colorList = links.map((l) => l.bg).join(',');
-
 const LinksPage: NextPage = () => (
   <C.Center minH="100vh">
     <C.Container>
-      <MotionBox
-        animate={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -5 }}
-        transition={{ type: 'tween' }}
-      >
-        <C.Text as="h1" color="fgSecondary" textStyle="h1">
-          <C.Box
-            as="span"
-            bgClip="text"
-            bgGradient={`linear(to-tl, ${colorList})`}
-          >
-            Hyperlinks!
-          </C.Box>{' '}
-          There are many like them, but these are mine.
-        </C.Text>
-      </MotionBox>
-      <C.Grid gap={4} mt={7} templateColumns={{ lg: 'repeat(3, 1fr)' }}>
+      <C.Grid gap={4}>
         {links.map(({ bg, href, text }, i) => (
           <MotionListItem delay={0.1 * i + 0.1} key={text}>
             <BigLink bg={bg} fg="bg" href={href} text={text} />

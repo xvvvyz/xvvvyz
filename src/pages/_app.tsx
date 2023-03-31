@@ -4,13 +4,13 @@ import { AppProps } from 'next/app';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { DefaultSeo } from 'next-seo';
 
-const description = 'xvvvyz is a rot21 on caaade. cade is my name.';
+const description = 'this is a meta description that nobody will read.';
 
 const App = ({ Component, pageProps }: AppProps) => (
   <>
     <DefaultSeo
       canonical="https://xvvvyz.xyz"
-      defaultTitle="xvvvyz — a few hyperlinks"
+      defaultTitle="xvvvyz"
       description={description}
       openGraph={{
         description,
@@ -55,7 +55,7 @@ const App = ({ Component, pageProps }: AppProps) => (
           },
           Container: {
             baseStyle: {
-              maxW: { base: 'container.xs', lg: 'container.lg' },
+              maxW: { base: 'container.xs' },
               px: 4,
               py: 24,
             },
