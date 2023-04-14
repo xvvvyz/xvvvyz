@@ -78,18 +78,18 @@
     bottom: var(--space-1);
     content: ' ';
     left: var(--space-1);
-    opacity: 0;
+    opacity: 0.05;
     position: absolute;
     right: var(--space-1);
     top: var(--space-1);
-    transform: translateY(0.5em);
+    transform: scale(0.95) translateY(0.3em);
     transition: all 0.2s;
     z-index: -1;
   }
 
   a:where(:focus, :hover)::before {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1) translateY(0);
   }
 </style>
 
