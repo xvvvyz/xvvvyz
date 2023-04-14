@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta name="color-scheme" content="dark light" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>cade (@xvvvyz)</title>
+
+<style>
+  :root {
+    --color-background: #111;
+    --color-text-subtle: #999;
+    --color-text: #eee;
+    --font-family: -apple-system, Helvetica, sans-serif;
+    --font-size: 18px;
+    --font-weight: 400;
+    --space-1: 0.75rem;
+    --space-2: 1rem;
+    --space-3: 4rem;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --color-background: #eee;
+      --color-text-subtle: #777;
+      --color-text: #111;
+    }
+  }
+</style>
+
+<style>
+  html {
+    background-color: var(--color-background);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+  }
+
+  body {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    padding: var(--space-3) var(--space-2);
+    width: 100vw;
+  }
+
+  main {
+    text-align: right;
+  }
+
+  h1 {
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    margin: 0;
+    padding: var(--space-1);
+  }
+
+  nav {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    color: var(--color-text-subtle);
+    padding: var(--space-1);
+    position: relative;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a:where(:focus, :hover) {
+    color: var(--color-background);
+  }
+
+  a::before {
+    background-color: var(--color-text);
+    bottom: var(--space-1);
+    content: ' ';
+    left: var(--space-1);
+    opacity: 0;
+    position: absolute;
+    right: var(--space-1);
+    top: var(--space-1);
+    transform: translateY(0.5em);
+    transition: all 0.2s;
+    z-index: -1;
+  }
+
+  a:where(:focus, :hover)::before {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<main>
+  <h1>cade (@xvvvyz)</h1>
+  <nav>
+    <a href="https://twitter.com/xvvvyz">twitter.com/xvvvyz</a>
+    <a href="https://unsplash.com/@xvvvyz">unsplash.com/xvvvyz</a>
+    <a href="https://github.com/xvvvyz">github.com/xvvvyz</a>
+    <a href="mailto:cade@xvvvyz.xyz">cade@xvvvyz.xyz</a>
+    <a href="https://github.com/xvvvyz.gpg">pgp public key</a>
+  </nav>
+</main>
