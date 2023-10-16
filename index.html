@@ -43,10 +43,8 @@
   }
 
   nav {
-    align-items: flex-end;
     display: flex;
     flex-direction: column;
-    text-align: right;
   }
 
   a {
@@ -54,6 +52,7 @@
     padding: var(--space-1);
     position: relative;
     text-decoration: none;
+    text-align: center;
     transition: color 0.2s;
   }
 
@@ -76,14 +75,19 @@
     opacity: 1;
     transform: scale(1) translateY(0);
   }
+
+  @media (min-width: 600px) {
+    nav {
+      flex-direction: row;
+    }
+  }
 </style>
 
 <nav>
-  <a href="https://x.com/xvvvyz">x.com/xvvvyz</a>
-  <a href="https://github.com/xvvvyz">github.com/xvvvyz</a>
-  <a href="https://unsplash.com/@xvvvyz">unsplash.com/xvvvyz</a>
-  <a href="https://linkedin.com/in/xvvvyz/">linkedin.com/in/xvvvyz</a>
-  <a href="https://www.reddit.com/user/xvvvyz">reddit.com/u/xvvvyz</a>
-  <a href="mailto:cade@xvvvyz.xyz">cade@xvvvyz.xyz</a>
-  <a href="https://github.com/xvvvyz.gpg">pgp public key</a>
+  <a href="https://x.com/xvvvyz">X</a>
+  <a href="https://github.com/xvvvyz">GitHub</a>
+  <a href="https://unsplash.com/@xvvvyz">Unsplash</a>
+  <a href="https://linkedin.com/in/xvvvyz/">LinkedIn</a>
+  <a href="https://www.reddit.com/user/xvvvyz">Reddit</a>
+  <a href="https://github.com/xvvvyz.gpg">PGP</a>
 </nav>
