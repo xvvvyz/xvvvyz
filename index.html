@@ -76,6 +76,11 @@
     transform: scale(1) translateY(0);
   }
 
+  .disabled {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
   @media (min-width: 600px) {
     nav {
       flex-direction: row;
@@ -87,7 +92,7 @@
   <a href="https://x.com/xvvvyz">X</a>
   <a href="https://github.com/xvvvyz">GitHub</a>
   <a href="https://unsplash.com/@xvvvyz">Unsplash</a>
-  <a href="https://linkedin.com/in/xvvvyz/">LinkedIn</a>
+  <a class="disabled" href="https://linkedin.com/in/xvvvyz/">LinkedIn</a>
   <a href="https://www.reddit.com/user/xvvvyz">Reddit</a>
   <a href="https://github.com/xvvvyz.gpg">PGP</a>
 </nav>
