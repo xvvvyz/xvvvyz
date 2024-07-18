@@ -36,11 +36,18 @@
     align-items: center;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
     justify-content: center;
     margin: 0;
-    min-height: 100vh;
+    min-height: 100dvh;
     padding: var(--space-3) var(--space-2);
     width: 100vw;
+  }
+
+  h1 {
+    font-size: 1rem;
+    font-weight: var(--font-weight);
   }
 
   nav {
@@ -78,13 +85,17 @@
   }
 
   @media (min-width: 600px) {
+    body,
     nav {
       flex-direction: row;
     }
   }
 </style>
 
+<h1>Hey 👋 I&rsquo;m Cade</h1>
 <nav>
   <a href="https://github.com/xvvvyz">GitHub</a>
   <a href="https://linkedin.com/in/xvvvyz/">LinkedIn</a>
+  <a href="https://unsplash.com/@xvvvyz">Unsplash</a>
+  <a href="https://www.reddit.com/user/xvvvyz/">Reddit</a>
 </nav>
