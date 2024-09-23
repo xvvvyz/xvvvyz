@@ -13,9 +13,9 @@
     --font-family: -apple-system, Helvetica, sans-serif;
     --font-size: 18px;
     --font-weight: 400;
-    --space-1: 0.75rem;
+    --space-1: 0.5rem;
     --space-2: 1rem;
-    --space-3: 4rem;
+    --space-3: 2rem;
   }
 
   @media (prefers-color-scheme: light) {
@@ -30,6 +30,7 @@
     background-color: var(--color-background);
     font-family: var(--font-family);
     font-size: var(--font-size);
+    line-height: 1.5rem;
   }
 
   body {
@@ -37,7 +38,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: var(--space-1);
+    gap: var(--space-3);
     justify-content: center;
     margin: 0;
     min-height: 100dvh;
@@ -45,23 +46,35 @@
     width: 100vw;
   }
 
+  img {
+    border-radius: 50%;
+  }
+
   h1 {
     font-size: 1rem;
     font-weight: var(--font-weight);
+    margin: 0;
+    max-width: 14rem;
+    text-align: center;
+  }
+
+  span {
+    color: var(--color-text-subtle);
   }
 
   nav {
     align-items: center;
     display: flex;
     flex-direction: column;
+    margin: var(--space-1) 0 calc(-1 * var(--space-1));
   }
 
   a {
     color: var(--color-text-subtle);
     padding: var(--space-1);
     position: relative;
-    text-decoration: none;
     text-align: center;
+    text-decoration: none;
     transition: color 0.2s;
   }
 
@@ -71,11 +84,12 @@
 
   a::before {
     background-color: var(--color-text);
+    border-radius: 2px;
     content: ' ';
-    inset: var(--space-1);
+    inset: 0.7rem 0.4rem;
     opacity: 0.05;
     position: absolute;
-    transform: scale(0.95) translateY(0.3em);
+    transform: scale(0.9) translateY(0.3em);
     transition: all 0.2s;
     z-index: -1;
   }
@@ -85,20 +99,32 @@
     transform: scale(1) translateY(0);
   }
 
-  @media (min-width: 750px) {
-    body,
+  @media (min-width: 700px) {
+    body {
+      flex-direction: row;
+    }
+
+    h1 {
+      max-width: none;
+      text-align: left;
+    }
+
     nav {
       flex-direction: row;
+      margin-left: calc(-1 * var(--space-1));
+      margin-top: 0;
     }
   }
 </style>
 
-<h1>Hey 👋 I&rsquo;m Cade</h1>
-<nav>
-  <a href="mailto:hey@cade.me?subject=hey">Email</a>
-  <a href="https://github.com/xvvvyz">GitHub</a>
-  <a href="https://unsplash.com/@xvvvyz">Unsplash</a>
-  <a href="https://linkedin.com/in/xvvvyz/">LinkedIn</a>
-  <a href="https://www.reddit.com/user/xvvvyz/">Reddit</a>
-  <a href="https://x.com/xvvvyz">X</a>
-</nav>
+<img alt="" height="100" src="https://files.xvvvyz.xyz/mood.jpg" width="100" />
+<div>
+  <h1>Hey 👋 I&rsquo;m Cade. I design &amp; build things for the&nbsp;www.</h1>
+  <nav>
+    <a href="https://github.com/xvvvyz">GitHub</a>
+    <a href="https://linkedin.com/in/xvvvyz/">LinkedIn</a>
+    <a href="https://cal.com/xvvvyz">Book a call</a>
+    <a href="mailto:hey@cade.me?subject=hey">Email</a>
+    <a href="https://github.com/xvvvyz.gpg">PGP</a>
+  </nav>
+</div>
