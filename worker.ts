@@ -1,4 +1,4 @@
-<!doctype html>
+const html = `<!doctype html>
 <meta charset="utf-8" />
 <meta name="color-scheme" content="dark light" />
 <meta name="robots" content="noindex" />
@@ -128,4 +128,12 @@
     <a href="mailto:hey@cade.me?subject=hey">Email</a>
     <a href="https://github.com/xvvvyz.gpg">PGP</a>
   </nav>
-</div>
+</div>`;
+
+export default {
+  fetch() {
+    return new Response(html, {
+      headers: { 'Content-Type': 'text/html; charset=utf-8' },
+    });
+  },
+};
