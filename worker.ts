@@ -118,7 +118,7 @@ const html = `<!doctype html>
   }
 </style>
 
-<img alt="" height="100" src="https://files.xvvvyz.xyz/me.webp" width="100" />
+<img alt="" height="100" src="https://files.cade.me/me.webp" width="100" />
 <div>
   <h1>Hey 👋 I&rsquo;m Cade. I bake apps and serve them fresh.</h1>
   <nav>
