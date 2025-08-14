@@ -125,7 +125,6 @@ const html = `<!doctype html>
     <a href="https://github.com/xvvvyz">GitHub</a>
     <a href="https://linkedin.com/in/xvvvyz/">LinkedIn</a>
     <a href="https://cal.com/xvvvyz">Book a call</a>
-    <a href="mailto:hey@cade.me?subject=hey">Email</a>
     <a href="https://github.com/xvvvyz.gpg">PGP</a>
   </nav>
 </div>`;
