@@ -120,7 +120,7 @@ const html = `<!doctype html>
 
 <img alt="" height="100" src="https://files.cade.me/me.webp" width="100" />
 <div>
-  <h1>Hey 👋 I&rsquo;m Cade. I bake apps and serve them fresh.</h1>
+  <h1>Hey 👋 I&rsquo;m Cade. I bake apps &amp; serve them fresh.</h1>
   <nav>
     <a href="https://github.com/xvvvyz">GitHub</a>
     <a href="https://linkedin.com/in/xvvvyz/">LinkedIn</a>
